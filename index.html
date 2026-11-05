@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ClaudeBot Desk</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Layout: left rail of desk seats + status, main pane with one view per tab. Summary first, detail below. */
+:root {
+  --bg: #eef1f4;
+  --panel: #ffffff;
+  --ink: #16202b;
+  --muted: #5b6875;
+  --line: #d5dce3;
+  --accent: #1f5fbf;
+  --good: #1d7a46;
+  --warn: #a86400;
+  --bad: #b3261e;
+  --chip: #e6ecf3;
+  --font-display: "IBM Plex Sans Condensed", "Arial Narrow", sans-serif;
+  --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f151c; --panel: #17202a; --ink: #e4eaf0; --muted: #95a3b1; --line: #2a3644;
+    --accent: #6ea4ff; --good: #4cc185; --warn: #f0a640; --bad: #ff7a70; --chip: #1f2b38;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f151c; --panel: #17202a; --ink: #e4eaf0; --muted: #95a3b1; --line: #2a3644;
+  --accent: #6ea4ff; --good: #4cc185; --warn: #f0a640; --bad: #ff7a70; --chip: #1f2b38;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 15px; line-height: 1.5; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 600; text-wrap: balance; margin: 0; letter-spacing: .01em; }
+h1 { font-size: 22px; }
+h2 { font-size: 18px; }
+h3 { font-size: 15px; }
+a { color: var(--accent); }
+.mono, td.num, .num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+.wrap { display: grid; grid-template-columns: 250px 1fr; gap: 20px; padding: 20px; max-width: 1280px; margin: 0 auto; }
+@media (max-width: 860px) { .wrap { grid-template-columns: 1fr; padding: 16px; } }
+header.top { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 16px; padding: 18px 20px 0; max-width: 1280px; margin: 0 auto; }
+header.top p { margin: 0; color: var(--muted); font-size: 13px; }
+.rail { display: flex; flex-direction: column; gap: 12px; }
+.panel { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 16px; }
+.seat { display: grid; grid-template-columns: 10px 1fr; gap: 4px 10px; align-items: start; padding: 10px 0; border-top: 1px solid var(--line); }
+.seat:first-of-type { border-top: 0; }
+.dot { width: 10px; height: 10px; border-radius: 50%; margin-top: 6px; background: var(--muted); }
+.dot.ok { background: var(--good); } .dot.blocked { background: var(--bad); } .dot.idle { background: var(--line); }
+.seat b { font-weight: 600; font-size: 14px; }
+.seat small { grid-column: 2; color: var(--muted); font-size: 12px; }
+.never { font-size: 12px; color: var(--muted); margin: 0; padding-left: 18px; }
+.never li { margin: 2px 0; }
+nav.tabs { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 14px; }
+nav.tabs button { font: 500 14px var(--font-body); color: var(--muted); background: transparent; border: 1px solid transparent; border-radius: 6px; padding: 6px 12px; cursor: pointer; }
+nav.tabs button[aria-selected="true"] { color: var(--ink); background: var(--panel); border-color: var(--line); }
+nav.tabs button:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.badge { display: inline-block; min-width: 18px; padding: 0 6px; border-radius: 9px; background: var(--bad); color: #fff; font-size: 11px; font-weight: 600; line-height: 18px; text-align: center; margin-left: 4px; }
+.view { display: none; flex-direction: column; gap: 14px; }
+.view.on { display: flex; }
+.chip { display: inline-block; font-size: 12px; padding: 1px 8px; border-radius: 10px; background: var(--chip); color: var(--ink); white-space: nowrap; }
+.chip.high { background: color-mix(in srgb, var(--bad) 18%, transparent); color: var(--bad); }
+.chip.medium { background: color-mix(in srgb, var(--warn) 18%, transparent); color: var(--warn); }
+.chip.low { color: var(--muted); }
+.chip.unverified { background: transparent; border: 1px dashed var(--warn); color: var(--warn); }
+.chip.win { color: var(--good); background: color-mix(in srgb, var(--good) 15%, transparent); }
+.chip.loss { color: var(--bad); background: color-mix(in srgb, var(--bad) 15%, transparent); }
+.row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.between { justify-content: space-between; }
+.muted { color: var(--muted); }
+.small { font-size: 13px; }
+.prose { max-width: 68ch; }
+.prose p { margin: 6px 0; }
+.checklist { list-style: none; padding: 0; margin: 8px 0 0; display: flex; flex-direction: column; gap: 6px; }
+.checklist label { display: flex; gap: 8px; align-items: baseline; cursor: pointer; }
+.table-wrap { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 13.5px; }
+th, td { text-align: left; padding: 7px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-weight: 600; color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .04em; }
+td.num, th.num { text-align: right; }
+.decision { display: flex; flex-wrap: wrap; gap: 8px; }
+.btn { font: 500 14px var(--font-body); border: 1px solid var(--line); background: var(--panel); color: var(--ink); padding: 7px 14px; border-radius: 6px; cursor: pointer; }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+.btn.sel-trade { border-color: var(--good); color: var(--good); box-shadow: inset 0 0 0 1px var(--good); }
+.btn.sel-none { border-color: var(--muted); box-shadow: inset 0 0 0 1px var(--muted); }
+.btn.small { padding: 3px 10px; font-size: 13px; }
+a.btn { text-decoration: none; display: inline-block; }
+.badge[hidden] { display: none; }
+form.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px 12px; }
+form.grid .full { grid-column: 1 / -1; }
+label.f { display: flex; flex-direction: column; gap: 3px; font-size: 12px; color: var(--muted); }
+input, select, textarea { font: 14px var(--font-body); color: var(--ink); background: var(--bg); border: 1px solid var(--line); border-radius: 5px; padding: 6px 8px; width: 100%; }
+textarea { min-height: 64px; resize: vertical; }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; }
+.stat { border: 1px solid var(--line); border-radius: 6px; padding: 10px 12px; }
+.stat .v { font: 500 20px var(--font-mono); font-variant-numeric: tabular-nums; }
+.stat .k { font-size: 12px; color: var(--muted); }
+.empty { color: var(--muted); font-size: 14px; padding: 6px 0; }
+.blockitem { border-left: 3px solid var(--bad); padding: 8px 12px; background: color-mix(in srgb, var(--bad) 6%, transparent); border-radius: 0 6px 6px 0; }
+.blockitem.resolved { border-left-color: var(--line); background: transparent; opacity: .7; }
+.note { font-size: 13px; color: var(--warn); }
+.status-line { font-size: 12px; color: var(--muted); min-height: 18px; }
+/* ---- Color layer: each desk seat owns a hue, used on its rail entry, its tab and its panels ---- */
+:root {
+  --c-research: #0e8a8a; --c-ideas: #7a4fd0; --c-tracker: #0b7bb8; --c-chief: #3d4fd6; --c-journal: #c9741a; --c-weekly: #d04a6b; --c-ops: #2f8f4e; --c-blocked: #c4342b; --c-settings: #6b7785;
+  --band-1: #0f3d5c; --band-2: #136f7a; --band-ink: #f2f8fb;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --c-research: #3cc6c6; --c-ideas: #b391ff; --c-tracker: #4fb7f0; --c-chief: #8c98ff; --c-journal: #f2a250; --c-weekly: #ff7d9c; --c-ops: #5fcf84; --c-blocked: #ff6f64; --c-settings: #a3afbc; --band-1: #0b2a40; --band-2: #0f525b; } }
+:root[data-theme="dark"] { --c-research: #3cc6c6; --c-ideas: #b391ff; --c-tracker: #4fb7f0; --c-chief: #8c98ff; --c-journal: #f2a250; --c-weekly: #ff7d9c; --c-ops: #5fcf84; --c-blocked: #ff6f64; --c-settings: #a3afbc; --band-1: #0b2a40; --band-2: #0f525b; }
+
+body { background:
+  radial-gradient(1200px 400px at 100% -10%, color-mix(in srgb, var(--c-research) 12%, transparent), transparent 70%),
+  radial-gradient(900px 380px at -10% 0%, color-mix(in srgb, var(--c-chief) 10%, transparent), transparent 70%),
+  var(--bg); background-attachment: fixed; }
+.band { background: linear-gradient(110deg, var(--band-1), var(--band-2)); color: var(--band-ink); }
+.band header.top { padding: 22px 20px 18px; align-items: center; }
+.band header.top p { color: color-mix(in srgb, var(--band-ink) 78%, transparent); }
+.band h1 { font-size: 26px; display: flex; align-items: center; gap: 10px; }
+.band .logo { width: 30px; height: 30px; border-radius: 8px; background: linear-gradient(135deg, var(--c-journal), var(--c-weekly)); display: grid; place-items: center; font: 600 15px var(--font-display); color: #fff; box-shadow: 0 2px 8px rgba(0,0,0,.25); }
+.band .clock-pill { background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.2); padding: 5px 12px; border-radius: 20px; color: var(--band-ink); }
+.ticker { display: flex; flex-wrap: wrap; gap: 6px; max-width: 1280px; margin: 0 auto; padding: 0 20px 16px; }
+.ticker span { font: 500 12px var(--font-mono); padding: 3px 10px; border-radius: 12px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.18); color: var(--band-ink); }
+
+.panel { box-shadow: 0 1px 2px rgba(15,30,50,.05), 0 4px 14px rgba(15,30,50,.05); border-top: 3px solid var(--hue, var(--line)); }
+.view .panel h2 { color: color-mix(in srgb, var(--hue, var(--ink)) 75%, var(--ink)); }
+#view-today { --hue: var(--c-chief); } #view-research { --hue: var(--c-research); } #view-journal { --hue: var(--c-journal); }
+#view-reviews { --hue: var(--c-weekly); } #view-tracker { --hue: var(--c-tracker); } #view-ops { --hue: var(--c-ops); } #view-blocked { --hue: var(--c-blocked); } #view-settings { --hue: var(--c-settings); }
+.rail .panel { --hue: var(--band-2); }
+
+nav.tabs { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 5px; gap: 3px; }
+nav.tabs button { border-radius: 7px; }
+nav.tabs button:hover { color: var(--ink); background: var(--chip); }
+nav.tabs button[aria-selected="true"] { color: #fff; background: var(--tab, var(--accent)); border-color: transparent; }
+#tab-today { --tab: var(--c-chief); } #tab-research { --tab: var(--c-research); } #tab-journal { --tab: var(--c-journal); }
+#tab-reviews { --tab: var(--c-weekly); } #tab-tracker { --tab: var(--c-tracker); } #tab-ops { --tab: var(--c-ops); } #tab-blocked { --tab: var(--c-blocked); } #tab-settings { --tab: var(--c-settings); }
+nav.tabs button[aria-selected="true"] .badge { background: #fff; color: var(--c-blocked); }
+
+.seat { border-top: 0; margin: 6px 0; padding: 9px 10px; border-radius: 7px; background: color-mix(in srgb, var(--seat) 9%, transparent); border-left: 3px solid var(--seat); }
+.seat b { color: color-mix(in srgb, var(--seat) 80%, var(--ink)); }
+.dot.ok { background: var(--good); box-shadow: 0 0 0 3px color-mix(in srgb, var(--good) 25%, transparent); }
+.dot.blocked { background: var(--bad); box-shadow: 0 0 0 3px color-mix(in srgb, var(--bad) 25%, transparent); }
+.dot.idle { background: color-mix(in srgb, var(--seat) 45%, transparent); }
+.never li::marker { color: var(--c-blocked); }
+
+.stat { border: 0; border-radius: 8px; background: color-mix(in srgb, var(--s) 11%, var(--panel)); border-left: 4px solid var(--s); }
+.stat .v { color: color-mix(in srgb, var(--s) 70%, var(--ink)); }
+.stat:nth-child(1) { --s: var(--c-chief); } .stat:nth-child(2) { --s: var(--c-journal); } .stat:nth-child(3) { --s: var(--c-research); }
+.stat:nth-child(4) { --s: var(--c-ops); } .stat:nth-child(5) { --s: var(--c-weekly); } .stat:nth-child(6) { --s: var(--c-settings); }
+
+th { background: color-mix(in srgb, var(--hue, var(--accent)) 8%, transparent); color: color-mix(in srgb, var(--hue, var(--muted)) 60%, var(--muted)); }
+tbody tr:hover td { background: color-mix(in srgb, var(--hue, var(--accent)) 5%, transparent); }
+.btn.primary { background: var(--hue, var(--accent)); border-color: var(--hue, var(--accent)); }
+.btn.primary:hover { filter: brightness(1.08); }
+.btn.sel-trade { background: color-mix(in srgb, var(--good) 14%, var(--panel)); }
+.btn.sel-none { background: color-mix(in srgb, var(--muted) 14%, var(--panel)); }
+input:focus, select:focus, textarea:focus { border-color: var(--hue, var(--accent)); }
+.blockitem { border-left-width: 4px; }
+.banner { font-size: 13px; padding: 10px 14px; border-radius: 8px; background: color-mix(in srgb, var(--c-tracker) 10%, var(--panel)); border: 1px solid color-mix(in srgb, var(--c-tracker) 35%, transparent); }
+.spark { display: block; }
+.up { color: var(--good); } .down { color: var(--bad); }
+.chart-wrap { position: relative; }
+.chart-wrap svg { width: 100%; height: 220px; display: block; }
+.tip { position: absolute; pointer-events: none; background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 6px 9px; font-size: 12px; box-shadow: 0 4px 12px rgba(0,0,0,.12); white-space: nowrap; }
+.thesis { font-size: 12px; color: var(--muted); max-width: 42ch; }
+@media (prefers-reduced-motion: no-preference) { .view.on { animation: fade .15s ease-out; } @keyframes fade { from { opacity: .6 } to { opacity: 1 } } }
+</style>
+</head>
+<body>
+<div class="band">
+<header class="top">
+  <div>
+    <h1><span class="logo" aria-hidden="true">CB</span>ClaudeBot Desk</h1>
+    <p>Bots research, brief and keep records. You decide size, entry, stop, target, and whether to trade at all.</p>
+  </div>
+  <p class="mono clock-pill" id="clock"></p>
+</header>
+<div class="ticker" id="ticker" aria-label="Watchlist"></div>
+</div>
+
+<div class="wrap">
+  <aside class="rail">
+    <section class="panel" aria-labelledby="seats-h">
+      <h2 id="seats-h">Desk seats</h2>
+      <div id="seats"></div>
+    </section>
+    <section class="panel" aria-labelledby="never-h">
+      <h3 id="never-h">No bot ever</h3>
+      <ul class="never">
+        <li>places, edits or cancels an order</li>
+        <li>gives a bias in the brief, journal or records; only the Ideas seat proposes trades, and those are paper only</li>
+        <li>moves a stop or changes size</li>
+        <li>holds broker logins or API keys</li>
+        <li>guesses: it writes "I could not verify this" or marks the task Blocked</li>
+      </ul>
+    </section>
+  </aside>
+
+  <main>
+    <nav class="tabs" role="tablist" aria-label="Desk views">
+      <button role="tab" id="tab-today" aria-selected="true" data-view="today">Today</button>
+      <button role="tab" id="tab-research" aria-selected="false" data-view="research">Research</button>
+      <button role="tab" id="tab-journal" aria-selected="false" data-view="journal">Journal</button>
+      <button role="tab" id="tab-reviews" aria-selected="false" data-view="reviews">Reviews</button>
+      <button role="tab" id="tab-tracker" aria-selected="false" data-view="tracker">Tracker</button>
+      <button role="tab" id="tab-ops" aria-selected="false" data-view="ops">Records</button>
+      <button role="tab" id="tab-blocked" aria-selected="false" data-view="blocked">Blocked <span class="badge" id="blocked-count" hidden>0</span></button>
+      <button role="tab" id="tab-settings" aria-selected="false" data-view="settings">Settings</button>
+    </nav>
+    <div class="status-line" id="status" role="status"></div>
+
+    <!-- TODAY -->
+    <section class="view on" id="view-today" role="tabpanel" aria-labelledby="tab-today">
+      <div class="panel">
+        <div class="row between"><h2 id="brief-title">Morning brief</h2><span class="small muted" id="brief-meta"></span></div>
+        <div id="brief-body" class="prose"><p class="empty">Waiting for the Chief of Staff's first brief.</p></div>
+      </div>
+      <div class="panel">
+        <h2>Today's events</h2>
+        <div class="table-wrap" id="today-events"><p class="empty">No events yet.</p></div>
+      </div>
+      <div class="panel">
+        <h2>Your call for today</h2>
+        <p class="small muted">Only you set this. Clicking opens a filled-in GitHub issue; submit it to record your call.</p>
+        <div class="decision" id="decision">
+          <button class="btn" data-d="trade" type="button">Trading today</button>
+          <button class="btn" data-d="none" type="button">No-trade day</button>
+        </div>
+        <label class="f" style="margin-top:10px" for="decision-note">Why (optional)
+          <input id="decision-note" type="text" placeholder="e.g. CPI at 16:30, sitting out until it prints">
+        </label>
+      </div>
+    </section>
+
+    <!-- RESEARCH -->
+    <section class="view" id="view-research" role="tabpanel" aria-labelledby="tab-research">
+      <div class="panel">
+        <div class="row between"><h2>Event map</h2><span class="small muted">Every line carries a source. Dashed chips could not be verified.</span></div>
+        <div class="table-wrap" id="research-table"><p class="empty">The Research bot has not posted yet.</p></div>
+      </div>
+    </section>
+
+    <!-- JOURNAL -->
+    <section class="view" id="view-journal" role="tabpanel" aria-labelledby="tab-journal">
+      <div class="panel">
+        <h2>Log a trade</h2>
+        <p class="small muted">Prices come from your platform. Saving opens a filled-in GitHub issue: press Submit there and the trade shows here within a minute. Only you (the repo owner) can save.</p>
+        <form class="grid" id="trade-form" autocomplete="off">
+          <label class="f" for="t-date">Date<input id="t-date" type="date" required></label>
+          <label class="f" for="t-time">Entry time<input id="t-time" type="time"></label>
+          <label class="f" for="t-inst">Instrument<input id="t-inst" type="text" required placeholder="XAUUSD"></label>
+          <label class="f" for="t-dir">Direction<select id="t-dir"><option value="long">Long</option><option value="short">Short</option></select></label>
+          <label class="f" for="t-setup">Setup<input id="t-setup" type="text" placeholder="Opening range break"></label>
+          <label class="f" for="t-size">Size<input id="t-size" type="number" step="any" min="0"></label>
+          <label class="f" for="t-risk">Risk % of account<input id="t-risk" type="number" step="0.05" min="0"></label>
+          <label class="f" for="t-entry">Entry<input id="t-entry" type="number" step="any" required></label>
+          <label class="f" for="t-stop">Stop<input id="t-stop" type="number" step="any" required></label>
+          <label class="f" for="t-target">Target<input id="t-target" type="number" step="any"></label>
+          <label class="f" for="t-exit">Exit (blank if open)<input id="t-exit" type="number" step="any"></label>
+          <label class="f" for="t-pnl">P&amp;L in account ccy<input id="t-pnl" type="number" step="any"></label>
+          <label class="f" for="t-plan">Followed plan?<select id="t-plan"><option value="yes">Yes</option><option value="partly">Partly</option><option value="no">No</option></select></label>
+          <label class="f full" for="t-notes">Notes<textarea id="t-notes" placeholder="What you saw, why you took it, how you managed it"></textarea></label>
+          <div class="full row"><button class="btn primary" type="submit" id="t-save">Save trade via GitHub</button><span class="small muted" id="t-msg"></span></div>
+        </form>
+      </div>
+      <div class="panel">
+        <h2>Trades</h2>
+        <div class="table-wrap" id="trades-table"><p class="empty">No trades logged yet.</p></div>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="view" id="view-reviews" role="tabpanel" aria-labelledby="tab-reviews">
+      <div id="reviews-list" class="panel"><h2>Process reviews</h2><p class="empty">The Journal bot grades process, not P&amp;L. Reviews appear after your first logged trades.</p></div>
+    </section>
+
+    <!-- TRACKER -->
+    <section class="view" id="view-tracker" role="tabpanel" aria-labelledby="tab-tracker">
+      <p class="banner">Paper trades only: nothing here was bought. The Ideas bot suggests a trade; the Tracker stamps the entry price and time, then re-prices it every hour from Yahoo Finance hourly bars. Each hour's high and low are checked, so a stop or target touched between runs still counts; if both were touched in the same hour, the stop is assumed to have hit first.</p>
+      <div class="panel">
+        <div class="row between"><h2>Would these have made money?</h2><span class="small muted" id="trk-updated"></span></div>
+        <div class="stats" id="trk-stats" style="margin-top:10px"></div>
+      </div>
+      <div class="panel">
+        <h2>Cumulative result of closed ideas (R)</h2>
+        <p class="small muted">Each idea risks 1R, the distance from entry to stop.</p>
+        <div class="chart-wrap" id="trk-chart"><p class="empty">The line appears once the first idea closes.</p></div>
+      </div>
+      <div class="panel">
+        <h2>Open paper trades</h2>
+        <div class="table-wrap" id="trk-open"><p class="empty">No open ideas yet.</p></div>
+      </div>
+      <div class="panel">
+        <h2>Closed</h2>
+        <div class="table-wrap" id="trk-closed"><p class="empty">Nothing closed yet.</p></div>
+      </div>
+    </section>
+
+    <!-- OPS -->
+    <section class="view" id="view-ops" role="tabpanel" aria-labelledby="tab-ops">
+      <div class="panel">
+        <h2>Running totals</h2>
+        <p class="small muted">Worked out from your journal each time the page loads.</p>
+        <div class="stats" id="totals"></div>
+      </div>
+      <div class="panel">
+        <h2>Records from Tax &amp; Ops</h2>
+        <p class="small muted">Records only. Not tax advice and not a filing.</p>
+        <div id="ops-list"><p class="empty">The weekly records pass has not run yet.</p></div>
+      </div>
+    </section>
+
+    <!-- BLOCKED -->
+    <section class="view" id="view-blocked" role="tabpanel" aria-labelledby="tab-blocked">
+      <div class="panel">
+        <h2>Blocked tasks</h2>
+        <p class="small muted">A bot that cannot verify something stops here instead of guessing. Resolve it, or tell Claude what to do in chat.</p>
+        <div id="blocked-list" class="row" style="flex-direction:column;align-items:stretch"><p class="empty">Nothing blocked.</p></div>
+      </div>
+    </section>
+
+    <!-- SETTINGS -->
+    <section class="view" id="view-settings" role="tabpanel" aria-labelledby="tab-settings">
+      <div class="panel">
+        <h2>What the desk watches</h2>
+        <div id="settings-view" class="prose small"></div>
+        <p class="row" style="margin-top:10px"><a class="btn primary" id="settings-edit" target="_blank" rel="noopener" href="#">Edit settings on GitHub</a><span class="small muted">Change the watchlist (name, Yahoo symbol, calendar currencies), limits and rules in <span class="mono">data/settings.json</span>.</span></p>
+      </div>
+      <div class="panel">
+        <h2>Bot schedule</h2>
+        <div class="table-wrap" id="schedule"></div>
+        <p class="small muted">Free bots run on GitHub Actions (pause one under the repo's Actions tab). The two Claude seats are scheduled tasks in Claude.</p>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script>
+const OWNER = "twenty8apartments-gif", REPO = "ClaudeBot-Desk";
+const RAW = `https://raw.githubusercontent.com/${OWNER}/${REPO}/main/data/`;
+const GH = `https://github.com/${OWNER}/${REPO}`;
+const SEATS = [
+  { id: "research", name: "Research", job: "Source-tagged event map", when: "Mon–Fri 07:13" },
+  { id: "chief", name: "Chief of Staff", job: "Morning brief, open risk, checklist", when: "Mon–Fri ~07:15" },
+  { id: "journal", name: "Journal", job: "Grades each day's process", when: "Mon–Fri 23:37" },
+  { id: "weekly", name: "Journal (weekly)", job: "Week-in-review, patterns · Claude", when: "Sat 10:23" },
+  { id: "ops", name: "Tax & Ops", job: "Records and totals, no filings", when: "Sun 11:17" },
+  { id: "ideas", name: "Ideas (paper)", job: "Researches and suggests paper trades · Claude", when: "Mon–Fri 08:13" },
+  { id: "tracker", name: "Tracker", job: "Prices paper trades every hour", when: "Hourly at :55, Mon–Sat" },
+];
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const state = { settings: null, briefs: [], research: [], trades: [], reviews: [], ops: [], blocked: [], runs: [], decisions: {}, ideas: [] };
+let db = null;
+
+function todayKey() {
+  const tz = state.settings?.timezone || "Indian/Mauritius";
+  try { return new Intl.DateTimeFormat("en-CA", { timeZone: tz, year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date()); }
+  catch { return new Date().toISOString().slice(0, 10); }
+}
+function fmtTime(iso) {
+  if (!iso) return "";
+  const tz = state.settings?.timezone || "Indian/Mauritius";
+  try { return new Intl.DateTimeFormat("en-GB", { timeZone: tz, dateStyle: "medium", timeStyle: "short" }).format(new Date(iso)); }
+  catch { return iso; }
+}
+function tickClock() {
+  const tz = state.settings?.timezone || "Indian/Mauritius";
+  try { $("clock").textContent = new Intl.DateTimeFormat("en-GB", { timeZone: tz, weekday: "short", day: "2-digit", month: "short", hour: "2-digit", minute: "2-digit" }).format(new Date()) + " · " + tz; } catch {}
+}
+setInterval(tickClock, 30000); tickClock();
+
+/* Tabs, routed on the hash */
+function show(view) {
+  document.querySelectorAll("nav.tabs button").forEach((b) => b.setAttribute("aria-selected", String(b.dataset.view === view)));
+  document.querySelectorAll(".view").forEach((v) => v.classList.toggle("on", v.id === "view-" + view));
+}
+document.querySelectorAll("nav.tabs button").forEach((b) => b.addEventListener("click", () => { location.hash = b.dataset.view; show(b.dataset.view); }));
+window.addEventListener("hashchange", () => { const v = location.hash.slice(1); if ($("view-" + v)) show(v); });
+{ const v = location.hash.slice(1); if ($("view-" + v)) show(v); }
+
+/* R multiple */
+function rOf(t) {
+  const e = +t.entry, s = +t.stop, x = t.exit === "" || t.exit == null ? NaN : +t.exit;
+  const risk = Math.abs(e - s);
+  if (!risk || isNaN(x)) return null;
+  return ((x - e) / risk) * (t.direction === "short" ? -1 : 1);
+}
+const fmtR = (r) => (r == null ? "open" : (r >= 0 ? "+" : "") + r.toFixed(2) + "R");
+
+/* Renders */
+function renderSeats() {
+  $("seats").innerHTML = SEATS.map((s) => {
+    const last = state.runs.find((r) => r.bot === s.id);
+    const blocked = state.blocked.some((b) => b.bot === s.id && b.status !== "resolved");
+    const cls = blocked ? "blocked" : last ? "ok" : "idle";
+    const line = blocked ? "Blocked, needs you" : last ? "Last run " + fmtTime(last.at) : "Not run yet · " + s.when;
+    return `<div class="seat" style="--seat: var(--c-${s.id})"><span class="dot ${cls}" aria-hidden="true"></span><b>${esc(s.name)}</b><small>${esc(s.job)}</small><small>${esc(line)}</small></div>`;
+  }).join("");
+  $("schedule").innerHTML = `<table><thead><tr><th>Seat</th><th>Runs (your time)</th><th>Does</th></tr></thead><tbody>${SEATS.map((s) => `<tr><td>${esc(s.name)}</td><td class="mono">${esc(s.when)}</td><td class="small muted">${esc(s.job)}</td></tr>`).join("")}</tbody></table>`;
+}
+
+function eventsTable(rows, withDate) {
+  if (!rows.length) return '<p class="empty">No events posted for this window.</p>';
+  return `<table><thead><tr>${withDate ? "<th>Date</th>" : ""}<th>Time</th><th>Event</th><th>Affects</th><th>Impact</th><th>Source</th></tr></thead><tbody>${rows.map((r) => `
+    <tr>${withDate ? `<td class="mono">${esc(r.date)}</td>` : ""}<td class="mono">${esc(r.time || "—")}</td>
+    <td>${esc(r.title)}${r.note ? `<div class="small muted">${esc(r.note)}</div>` : ""}</td>
+    <td>${esc(r.instrument || "")}</td>
+    <td><span class="chip ${esc(r.impact || "low")}">${esc(r.impact || "low")}</span></td>
+    <td>${r.verified === false ? '<span class="chip unverified">I could not verify this</span> ' : ""}${r.source_url ? `<a href="${esc(r.source_url)}" target="_blank" rel="noopener">${esc(r.source_title || "source")}</a>` : '<span class="muted small">no source</span>'}</td></tr>`).join("")}</tbody></table>`;
+}
+
+function renderToday() {
+  const key = todayKey();
+  const b = state.briefs.find((x) => x.date === key) || state.briefs[0];
+  if (b) {
+    $("brief-title").textContent = b.date === key ? "Morning brief" : "Latest brief (" + b.date + ")";
+    $("brief-meta").textContent = "Chief of Staff · " + fmtTime(b.createdAt);
+    const list = (arr) => (arr && arr.length ? `<ul>${arr.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>` : "");
+    $("brief-body").innerHTML = `
+      ${b.headline ? `<p><b>${esc(b.headline)}</b></p>` : ""}
+      ${b.summary ? `<p>${esc(b.summary)}</p>` : ""}
+      ${b.openRisk ? `<h3 style="margin-top:12px">Open risk</h3><p>${esc(b.openRisk)}</p>` : ""}
+      ${b.reminders?.length ? `<h3 style="margin-top:12px">Reminders</h3>${list(b.reminders)}` : ""}
+      ${b.checklist?.length ? `<h3 style="margin-top:12px">Pre-trade checklist</h3><ul class="checklist">${b.checklist.map((c, i) => `<li><label for="ck-${i}"><input type="checkbox" id="ck-${i}" style="width:auto"> ${esc(c)}</label></li>`).join("")}</ul>` : ""}
+      ${b.unverified?.length ? `<p class="note">I could not verify: ${b.unverified.map(esc).join("; ")}</p>` : ""}`;
+  }
+  const todays = state.research.filter((r) => r.date === key).sort((a, z) => String(a.time).localeCompare(String(z.time)));
+  $("today-events").innerHTML = eventsTable(todays, false);
+  const d = state.decisions[key];
+  document.querySelectorAll("#decision button").forEach((btn) => btn.className = "btn" + (d?.call === btn.dataset.d ? (btn.dataset.d === "trade" ? " sel-trade" : " sel-none") : ""));
+  if (d && document.activeElement !== $("decision-note")) $("decision-note").value = d.note || "";
+}
+
+function renderResearch() {
+  const key = todayKey();
+  const rows = state.research.filter((r) => r.date >= key).sort((a, z) => (a.date + (a.time || "")).localeCompare(z.date + (z.time || "")));
+  $("research-table").innerHTML = rows.length ? eventsTable(rows, true) : (state.research.length ? '<p class="empty">No upcoming events. Older ones are kept in the database.</p>' : '<p class="empty">The Research bot has not posted yet.</p>');
+}
+
+function renderTrades() {
+  const ccy = state.settings?.currency || "";
+  const rows = [...state.trades].sort((a, z) => String(z.date).localeCompare(String(a.date)) || String(z.createdAt).localeCompare(String(a.createdAt)));
+  $("trades-table").innerHTML = rows.length ? `<table><thead><tr><th>Date</th><th>Instrument</th><th>Dir</th><th>Setup</th><th class="num">Entry</th><th class="num">Stop</th><th class="num">Exit</th><th class="num">R</th><th class="num">P&amp;L ${esc(ccy)}</th><th>Plan</th><th></th></tr></thead><tbody>${rows.map((t) => {
+    const r = rOf(t);
+    return `<tr><td class="mono">${esc(t.date)}</td><td>${esc(t.instrument)}</td><td>${esc(t.direction)}</td><td>${esc(t.setup || "")}</td>
+      <td class="num">${esc(t.entry)}</td><td class="num">${esc(t.stop)}</td><td class="num">${esc(t.exit ?? "")}</td>
+      <td class="num"><span class="chip ${r == null ? "" : r >= 0 ? "win" : "loss"}">${fmtR(r)}</span></td>
+      <td class="num">${t.pnl == null || t.pnl === "" ? "" : esc(t.pnl)}</td><td>${esc(t.followedPlan || "")}</td>
+      <td class="row" style="gap:4px;flex-wrap:nowrap">${t.status === "open" ? `<a class="btn small" target="_blank" rel="noopener" href="${issueUrl("[close] " + t.id, "exit: \npnl: \nnotes: ")}">Close</a>` : ""}<a class="btn small" target="_blank" rel="noopener" href="${issueUrl("[delete] " + t.id, "Submit to delete this trade.")}">Delete</a></td></tr>`;
+  }).join("")}</tbody></table>` : '<p class="empty">No trades logged yet.</p>';
+  renderTotals();
+}
+
+function renderTotals() {
+  const closed = state.trades.map((t) => ({ t, r: rOf(t) })).filter((x) => x.r != null);
+  const wins = closed.filter((x) => x.r > 0).length;
+  const netR = closed.reduce((s, x) => s + x.r, 0);
+  const pnl = state.trades.reduce((s, t) => s + (t.pnl === "" || t.pnl == null ? 0 : +t.pnl), 0);
+  const plan = state.trades.length ? Math.round((state.trades.filter((t) => t.followedPlan === "yes").length / state.trades.length) * 100) : null;
+  const open = state.trades.length - closed.length;
+  const stat = (k, v) => `<div class="stat"><div class="v">${v}</div><div class="k">${k}</div></div>`;
+  $("totals").innerHTML = [
+    stat("Trades logged", state.trades.length),
+    stat("Open", open),
+    stat("Win rate", closed.length ? Math.round((wins / closed.length) * 100) + "%" : "—"),
+    stat("Net R", closed.length ? fmtR(netR) : "—"),
+    stat("Net P&amp;L " + esc(state.settings?.currency || ""), state.trades.some((t) => t.pnl !== "" && t.pnl != null) ? pnl.toFixed(2) : "—"),
+    stat("Followed plan", plan == null ? "—" : plan + "%"),
+  ].join("");
+}
+
+function renderReviews() {
+  const el = $("reviews-list");
+  if (!state.reviews.length) return;
+  el.innerHTML = "<h2>Process reviews</h2>" + state.reviews.map((r) => `
+    <article style="border-top:1px solid var(--line);padding-top:12px;margin-top:12px" class="prose">
+      <div class="row between"><h3>${esc(r.period || "Daily")} · ${esc(r.date)}</h3>${r.grade ? `<span class="chip">Process grade ${esc(r.grade)}</span>` : ""}</div>
+      <p>${esc(r.summary)}</p>
+      ${r.kept?.length ? `<p class="small"><b>Rules kept:</b> ${r.kept.map(esc).join("; ")}</p>` : ""}
+      ${r.broken?.length ? `<p class="small"><b>Rules broken:</b> ${r.broken.map(esc).join("; ")}</p>` : ""}
+      ${r.fixes?.length ? `<p class="small"><b>One thing to work on:</b> ${r.fixes.map(esc).join("; ")}</p>` : ""}
+      <p class="small muted">Journal bot · ${fmtTime(r.createdAt)}</p>
+    </article>`).join("");
+}
+
+function renderOps() {
+  if (!state.ops.length) return;
+  $("ops-list").innerHTML = state.ops.map((o) => `
+    <article style="border-top:1px solid var(--line);padding:10px 0" class="prose">
+      <div class="row between"><h3>${esc(o.period)}</h3><span class="small muted">${fmtTime(o.createdAt)}</span></div>
+      <p>${esc(o.summary)}</p>
+      ${o.missing?.length ? `<p class="note">Missing from your records: ${o.missing.map(esc).join("; ")}</p>` : ""}
+    </article>`).join("");
+}
+
+function renderBlocked() {
+  const open = state.blocked.filter((b) => b.status !== "resolved");
+  $("blocked-count").hidden = !open.length; $("blocked-count").textContent = open.length;
+  const items = [...open, ...state.blocked.filter((b) => b.status === "resolved").slice(0, 10)];
+  $("blocked-list").innerHTML = items.length ? items.map((b) => `
+    <div class="blockitem ${b.status === "resolved" ? "resolved" : ""}">
+      <div class="row between"><b>${esc((SEATS.find((s) => s.id === b.bot) || {}).name || b.bot)}: ${esc(b.task)}</b><span class="small muted">${fmtTime(b.createdAt)}</span></div>
+      <p class="small" style="margin:4px 0">${esc(b.reason)}</p>
+      ${b.status !== "resolved" ? `<a class="btn small" target="_blank" rel="noopener" href="${issueUrl("[resolve] " + b.id, "Submit to mark this resolved.")}">Mark resolved</a>` : '<span class="small muted">Resolved</span>'}
+    </div>`).join("") : '<p class="empty">Nothing blocked.</p>';
+}
+
+function renderSettings() {
+  const s = state.settings; if (!s) return;
+  $("settings-edit").href = `${GH}/edit/main/data/settings.json`;
+  $("settings-view").innerHTML = `
+    <p><b>Watchlist:</b> ${(s.watchlist || []).map((w) => `${esc(w.name || w)} <span class="mono muted">${esc(w.symbol || "")}</span>`).join(" · ")}</p>
+    <p><b>Sessions:</b> ${esc(s.sessions || "")} · <b>Time zone:</b> ${esc(s.timezone || "")} · <b>Currency:</b> ${esc(s.currency || "")}</p>
+    <p><b>Max risk:</b> ${esc(s.maxRiskPct)}% per trade · <b>Daily stop:</b> ${esc(s.dailyStopR)}R · <b>No-trade window:</b> ${esc(s.noTradeMinutes ?? 15)} min around high-impact releases</p>
+    <p><b>Playbook rules</b></p><ul>${(s.rules || []).map((r) => `<li>${esc(r)}</li>`).join("")}</ul>`;
+}
+function ideaR(i) {
+  const e = +i.entryPrice, s = +i.stop, p = i.status === "open" ? +i.lastPrice : +(i.exitPrice ?? i.lastPrice);
+  const risk = Math.abs(e - s);
+  if (!risk || !isFinite(p) || !isFinite(e)) return null;
+  return ((p - e) / risk) * (i.direction === "short" ? -1 : 1);
+}
+function ideaPct(i) {
+  const e = +i.entryPrice, p = i.status === "open" ? +i.lastPrice : +(i.exitPrice ?? i.lastPrice);
+  if (!e || !isFinite(p)) return null;
+  return ((p - e) / e) * 100 * (i.direction === "short" ? -1 : 1);
+}
+const fmtPct = (v) => (v == null ? "—" : (v >= 0 ? "+" : "") + v.toFixed(2) + "%");
+const fmtPx = (v) => (v == null || v === "" || !isFinite(+v) ? "—" : (+v).toLocaleString("en-US", { maximumFractionDigits: +v < 10 ? 5 : 2 }));
+function spark(marks, dir, entry) {
+  const pts = (marks || []).map((m) => +m.price).filter(isFinite);
+  if (pts.length < 2) return '<span class="small muted">—</span>';
+  const w = 110, h = 28, lo = Math.min(...pts, +entry || Infinity), hi = Math.max(...pts, +entry || -Infinity), span = hi - lo || 1;
+  const x = (k) => (k / (pts.length - 1)) * (w - 4) + 2, y = (v) => h - 3 - ((v - lo) / span) * (h - 6);
+  const last = pts[pts.length - 1], win = (last - entry) * (dir === "short" ? -1 : 1) >= 0;
+  const col = win ? "var(--good)" : "var(--bad)";
+  const d = pts.map((v, k) => (k ? "L" : "M") + x(k).toFixed(1) + " " + y(v).toFixed(1)).join(" ");
+  const ey = isFinite(+entry) ? y(+entry).toFixed(1) : null;
+  return `<svg class="spark" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" role="img" aria-label="Price since entry">${ey ? `<line x1="0" x2="${w}" y1="${ey}" y2="${ey}" stroke="var(--line)" stroke-dasharray="3 3"/>` : ""}<path d="${d}" fill="none" stroke="${col}" stroke-width="1.75" stroke-linejoin="round"/><circle cx="${x(pts.length - 1)}" cy="${y(last)}" r="2.5" fill="${col}"/></svg>`;
+}
+function renderTracker() {
+  const ideas = state.ideas.filter((i) => i.status && i.status !== "pending");
+  const pending = state.ideas.filter((i) => i.status === "pending");
+  const open = ideas.filter((i) => i.status === "open");
+  const closed = ideas.filter((i) => i.status !== "open").sort((a, z) => String(z.closedAt).localeCompare(String(a.closedAt)));
+  const rs = closed.map(ideaR).filter((r) => r != null);
+  const wins = rs.filter((r) => r > 0).length;
+  const openR = open.map(ideaR).filter((r) => r != null).reduce((s, r) => s + r, 0);
+  const lastRun = state.runs.find((r) => r.bot === "tracker");
+  $("trk-updated").textContent = lastRun ? "Tracker last priced " + fmtTime(lastRun.at) : "Tracker has not run yet";
+  const stat = (k, v, cls = "") => `<div class="stat"><div class="v ${cls}">${v}</div><div class="k">${k}</div></div>`;
+  const tot = rs.reduce((s, r) => s + r, 0);
+  $("trk-stats").innerHTML = [
+    stat("Open paper trades", open.length + (pending.length ? ` <span class="small muted">+${pending.length} waiting</span>` : "")),
+    stat("Closed", closed.length),
+    stat("Win rate (closed)", rs.length ? Math.round((wins / rs.length) * 100) + "%" : "—"),
+    stat("Closed result", rs.length ? fmtR(tot) : "—", rs.length ? (tot >= 0 ? "up" : "down") : ""),
+    stat("Open, marked now", open.length ? fmtR(openR) : "—", open.length ? (openR >= 0 ? "up" : "down") : ""),
+    stat("Avg per closed idea", rs.length ? fmtR(tot / rs.length) : "—"),
+  ].join("");
+
+  const row = (i, isOpen) => {
+    const r = ideaR(i), pct = ideaPct(i), cls = r == null ? "" : r >= 0 ? "up" : "down";
+    return `<tr>
+      <td><b>${esc(i.instrument)}</b>${i.confidence ? ` <span class="chip">${esc(i.confidence)} confidence</span>` : ""}<div class="thesis">${esc(i.thesis || "")}</div>${i.evidence?.length ? `<details class="small" style="margin-top:4px"><summary>Evidence (${i.evidence.length})</summary><ul style="margin:4px 0;padding-left:18px">${i.evidence.map((e) => `<li>${esc(e.point)}${e.url ? ` <a href="${esc(e.url)}" target="_blank" rel="noopener">${esc(e.source || "source")}</a>` : ""}</li>`).join("")}</ul>${i.risks ? `<div class="muted">What would prove it wrong: ${esc(i.risks)}</div>` : ""}</details>` : ""}</td>
+      <td><span class="chip ${i.direction === "short" ? "loss" : "win"}">${esc(i.direction)}</span></td>
+      <td class="mono small">${fmtTime(i.entryAt || i.createdAt)}</td>
+      <td class="num">${fmtPx(i.entryPrice)}</td>
+      <td class="num">${fmtPx(i.stop)}<br><span class="small muted">${fmtPx(i.target)}</span></td>
+      <td class="num">${fmtPx(isOpen ? i.lastPrice : i.exitPrice)}<br><span class="small muted">${fmtTime(isOpen ? i.lastAt : i.closedAt)}</span></td>
+      <td class="num ${cls}">${fmtPct(pct)}</td>
+      <td class="num ${cls}"><b>${r == null ? "—" : fmtR(r)}</b></td>
+      <td>${spark(i.marks, i.direction, i.entryPrice)}</td>
+      ${isOpen ? "" : `<td><span class="chip ${i.status === "target" ? "win" : i.status === "stopped" ? "loss" : ""}">${esc({ target: "hit target", stopped: "hit stop", expired: "time exit" }[i.status] || i.status)}</span></td>`}
+      <td class="small">${i.lastSource ? esc(i.lastSource) : ""}${i.stale ? ' <span class="chip unverified">stale price</span>' : ""}</td></tr>`;
+  };
+  const head = (isOpen) => `<thead><tr><th>Idea</th><th>Dir</th><th>Entered</th><th class="num">Entry</th><th class="num">Stop / target</th><th class="num">${isOpen ? "Last" : "Exit"}</th><th class="num">%</th><th class="num">R</th><th>Since entry</th>${isOpen ? "" : "<th>Outcome</th>"}<th>Price source</th></tr></thead>`;
+  const pendRows = pending.map((i) => `<tr><td><b>${esc(i.instrument)}</b><div class="thesis">${esc(i.thesis || "")}</div></td><td><span class="chip">${esc(i.direction)}</span></td><td colspan="9" class="small muted">Suggested ${fmtTime(i.createdAt)} near ${fmtPx(i.refPrice)}. Waiting for the Tracker to stamp the entry price.</td></tr>`).join("");
+  $("trk-open").innerHTML = open.length || pending.length ? `<table>${head(true)}<tbody>${pendRows}${open.map((i) => row(i, true)).join("")}</tbody></table>` : '<p class="empty">No open ideas yet. The Ideas bot posts on weekday mornings.</p>';
+  $("trk-closed").innerHTML = closed.length ? `<table>${head(false)}<tbody>${closed.map((i) => row(i, false)).join("")}</tbody></table>` : '<p class="empty">Nothing closed yet.</p>';
+  drawCurve([...closed].reverse());
+}
+function drawCurve(closedAsc) {
+  const el = $("trk-chart");
+  const pts = []; let c = 0;
+  closedAsc.forEach((i) => { const r = ideaR(i); if (r == null) return; c += r; pts.push({ t: i.closedAt, v: c, label: i.instrument + " " + fmtR(r) }); });
+  if (pts.length < 1) { el.innerHTML = '<p class="empty">The line appears once the first idea closes.</p>'; return; }
+  pts.unshift({ t: closedAsc[0]?.entryAt || pts[0].t, v: 0, label: "Start" });
+  const W = 760, H = 220, L = 44, R = 12, T = 12, B = 26;
+  const vals = pts.map((p) => p.v), lo = Math.min(0, ...vals), hi = Math.max(0, ...vals);
+  const pad = (hi - lo || 1) * 0.12, y0 = lo - pad, y1 = hi + pad;
+  const x = (k) => L + (k / Math.max(1, pts.length - 1)) * (W - L - R), y = (v) => T + (1 - (v - y0) / (y1 - y0)) * (H - T - B);
+  const step = (y1 - y0) / 4, ticks = [0, 1, 2, 3, 4].map((k) => y0 + k * step);
+  const end = pts[pts.length - 1], col = end.v >= 0 ? "var(--good)" : "var(--bad)";
+  const line = pts.map((p, k) => (k ? "L" : "M") + x(k).toFixed(1) + " " + y(p.v).toFixed(1)).join(" ");
+  const area = line + ` L ${x(pts.length - 1).toFixed(1)} ${y(0).toFixed(1)} L ${x(0).toFixed(1)} ${y(0).toFixed(1)} Z`;
+  el.innerHTML = `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" role="img" aria-label="Cumulative R of closed paper trades, now ${fmtR(end.v)}">
+    ${ticks.map((t) => `<line x1="${L}" x2="${W - R}" y1="${y(t)}" y2="${y(t)}" stroke="var(--line)" stroke-width="1"/><text x="${L - 6}" y="${y(t) + 4}" text-anchor="end" font-size="11" fill="var(--muted)" font-family="var(--font-mono)">${t.toFixed(1)}R</text>`).join("")}
+    <line x1="${L}" x2="${W - R}" y1="${y(0)}" y2="${y(0)}" stroke="var(--muted)" stroke-width="1"/>
+    <path d="${area}" fill="${col}" opacity=".12"/>
+    <path d="${line}" fill="none" stroke="${col}" stroke-width="2" stroke-linejoin="round"/>
+    <circle cx="${x(pts.length - 1)}" cy="${y(end.v)}" r="4" fill="${col}" stroke="var(--panel)" stroke-width="2"/>
+    <text x="${Math.min(x(pts.length - 1), W - R - 4)}" y="${y(end.v) - 9}" text-anchor="end" font-size="12" fill="var(--ink)" font-family="var(--font-mono)">${fmtR(end.v)}</text>
+    <line id="xh" x1="0" x2="0" y1="${T}" y2="${H - B}" stroke="var(--muted)" stroke-dasharray="3 3" visibility="hidden"/>
+    <rect id="hit" x="${L}" y="${T}" width="${W - L - R}" height="${H - T - B}" fill="transparent"/>
+  </svg><div class="tip" id="tip" hidden></div>`;
+  const svg = el.querySelector("svg"), tip = $("tip"), xh = el.querySelector("#xh");
+  el.querySelector("#hit").addEventListener("mousemove", (ev) => {
+    const b = svg.getBoundingClientRect(), fx = ((ev.clientX - b.left) / b.width) * W;
+    const k = Math.max(0, Math.min(pts.length - 1, Math.round(((fx - L) / (W - L - R)) * (pts.length - 1))));
+    const p = pts[k]; xh.setAttribute("x1", x(k)); xh.setAttribute("x2", x(k)); xh.setAttribute("visibility", "visible");
+    tip.hidden = false; tip.innerHTML = `<b class="mono">${fmtR(p.v)}</b> after ${esc(p.label)}<br><span class="muted">${fmtTime(p.t)}</span>`;
+    tip.style.left = Math.min((x(k) / W) * b.width + 10, b.width - 190) + "px"; tip.style.top = "8px";
+  });
+  el.querySelector("#hit").addEventListener("mouseleave", () => { tip.hidden = true; xh.setAttribute("visibility", "hidden"); });
+}
+function renderTicker() { $("ticker").innerHTML = (state.settings?.watchlist || []).map((w) => `<span>${esc(w.name || w)}</span>`).join(""); }
+function renderAll() { renderTicker(); renderSeats(); renderToday(); renderResearch(); renderTrades(); renderReviews(); renderOps(); renderBlocked(); renderSettings(); renderTracker(); tickClock(); }
+renderAll();
+
+function flash(msg) { $("status").textContent = msg; }
+
+/* Data: JSON files in the GitHub repo, written by the bots */
+const FILES = ["settings", "briefs", "research", "trades", "reviews", "ops", "blocked", "runs", "decisions", "ideas"];
+async function getJson(name) {
+  for (const url of [RAW + name + ".json?t=" + Date.now(), "data/" + name + ".json?t=" + Date.now()]) {
+    try { const r = await fetch(url, { cache: "no-store" }); if (r.ok) return await r.json(); } catch {}
+  }
+  return null;
+}
+async function loadAll() {
+  const got = await Promise.all(FILES.map(getJson));
+  if (got.every((g) => g == null)) { flash("Couldn't reach the desk data on GitHub. Check your connection; it retries every 5 minutes."); return; }
+  FILES.forEach((f, k) => {
+    const v = got[k]; if (v == null) return;
+    if (f === "decisions") { const m = {}; v.forEach((d) => (m[d.date] = d)); state.decisions = m; }
+    else if (f === "settings") state.settings = v;
+    else state[f] = Array.isArray(v) ? v.map((x, n) => ({ id: x.id || String(n), ...x })) : v;
+  });
+  state.briefs.sort((a, z) => String(z.date).localeCompare(String(a.date)));
+  state.runs.sort((a, z) => String(z.at).localeCompare(String(a.at)));
+  state.reviews.sort((a, z) => String(z.createdAt).localeCompare(String(a.createdAt)));
+  flash("Data from GitHub · loaded " + new Intl.DateTimeFormat("en-GB", { hour: "2-digit", minute: "2-digit" }).format(new Date()) + " · refreshes every 5 minutes");
+  renderAll();
+}
+loadAll(); setInterval(loadAll, 5 * 60 * 1000);
+
+/* Actions open a pre-filled GitHub issue; the "commands" workflow applies it */
+function issueUrl(title, body) { return `${GH}/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`; }
+function openIssue(title, body) {
+  const url = issueUrl(title, body);
+  const w = window.open(url, "_blank", "noopener");
+  if (!w) location.href = url;
+}
+
+document.querySelectorAll("#decision button").forEach((b) => b.addEventListener("click", () => {
+  openIssue(`[decision] ${todayKey()}`, `call: ${b.dataset.d}\nnote: ${$("decision-note").value.trim()}\n\n(Press "Submit new issue". The desk updates within a minute.)`);
+}));
+
+$("t-date").value = todayKey();
+$("trade-form").addEventListener("submit", (ev) => {
+  ev.preventDefault();
+  const v = (id) => $(id).value.trim();
+  const inst = v("t-inst").toUpperCase();
+  const body = [
+    `date: ${v("t-date")}`, `time: ${v("t-time")}`, `instrument: ${inst}`, `direction: ${v("t-dir")}`, `setup: ${v("t-setup")}`,
+    `size: ${v("t-size")}`, `riskPct: ${v("t-risk")}`, `entry: ${v("t-entry")}`, `stop: ${v("t-stop")}`, `target: ${v("t-target")}`,
+    `exit: ${v("t-exit")}`, `pnl: ${v("t-pnl")}`, `followedPlan: ${v("t-plan")}`, `notes: ${v("t-notes")}`,
+  ].join("\n");
+  openIssue(`[trade] ${inst} ${v("t-dir")}`, body + `\n\n(Press "Submit new issue". The trade appears here within a minute.)`);
+  $("t-msg").textContent = "Opened GitHub with the trade filled in. Submit the issue there to save it.";
+});
+</script>
+</body>
+</html>

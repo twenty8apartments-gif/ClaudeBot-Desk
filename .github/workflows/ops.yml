@@ -1,0 +1,22 @@
+name: Tax & Ops (weekly)
+on:
+  schedule:
+    - cron: "17 7 * * 0"     # Sunday 11:17 Mauritius
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: data-writes
+  cancel-in-progress: false
+jobs:
+  ops:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python bots/ops.py
+      - run: 'scripts/commit-data.sh "Tax & Ops: weekly records"'

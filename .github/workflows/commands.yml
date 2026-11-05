@@ -1,0 +1,34 @@
+name: Dashboard commands
+on:
+  issues:
+    types: [opened]
+permissions:
+  contents: write
+  issues: write
+concurrency:
+  group: data-writes
+  cancel-in-progress: false
+jobs:
+  apply:
+    # Only the repo owner can change desk data.
+    if: github.event.issue.user.login == github.repository_owner && startsWith(github.event.issue.title, '[')
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - id: run
+        run: |
+          result="$(python bots/commands.py)"
+          echo "$result"
+          echo "result=$result" >> "$GITHUB_OUTPUT"
+      - env:
+          TITLE: ${{ github.event.issue.title }}
+        run: 'scripts/commit-data.sh "Dashboard: $TITLE"'
+      - env:
+          GH_TOKEN: ${{ github.token }}
+          RESULT: ${{ steps.run.outputs.result }}
+          NUMBER: ${{ github.event.issue.number }}
+        run: gh issue close "$NUMBER" --repo "$GITHUB_REPOSITORY" --comment "$RESULT"

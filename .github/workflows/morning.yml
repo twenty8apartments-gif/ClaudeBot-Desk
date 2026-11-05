@@ -1,0 +1,23 @@
+name: Morning (Research + Chief of Staff)
+on:
+  schedule:
+    - cron: "13 3 * * 1-5"   # 07:13 Mauritius, Mon–Fri
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: data-writes
+  cancel-in-progress: false
+jobs:
+  morning:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python bots/research.py
+      - run: python bots/brief.py
+      - run: 'scripts/commit-data.sh "Research + morning brief"'

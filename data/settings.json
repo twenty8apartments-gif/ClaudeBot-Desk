@@ -1,0 +1,22 @@
+{
+  "timezone": "Indian/Mauritius",
+  "currency": "USD",
+  "sessions": "London open and New York open",
+  "maxRiskPct": 1,
+  "dailyStopR": 3,
+  "noTradeMinutes": 15,
+  "watchlist": [
+    { "name": "S&P 500 (ES)", "symbol": "ES=F", "currencies": ["USD"] },
+    { "name": "Nasdaq 100 (NQ)", "symbol": "NQ=F", "currencies": ["USD"] },
+    { "name": "EUR/USD", "symbol": "EURUSD=X", "currencies": ["USD", "EUR"] },
+    { "name": "Gold (XAUUSD)", "symbol": "GC=F", "currencies": ["USD"] },
+    { "name": "US 10Y yield", "symbol": "^TNX", "currencies": ["USD"] }
+  ],
+  "rules": [
+    "No new trade in the 15 minutes before or after a high-impact release",
+    "Stop is set before entry and never widened",
+    "Risk per trade at or below the max risk setting",
+    "Stop for the day after hitting the daily stop in R",
+    "Every trade has a written reason before entry"
+  ]
+}
