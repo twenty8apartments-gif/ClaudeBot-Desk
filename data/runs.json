@@ -1,1 +1,14 @@
-[]
+[
+ {
+  "bot": "chief",
+  "at": "2026-11-05T06:21:39Z",
+  "status": "ok",
+  "summary": "No high-impact releases; 2 medium-impact on the calendar"
+ },
+ {
+  "bot": "research",
+  "at": "2026-11-05T06:21:39Z",
+  "status": "ok",
+  "summary": "61 events in feed (4 high impact); partial: ff_calendar_nextweek.json: HTTPError"
+ }
+]

@@ -1,1 +1,21 @@
-[]
+[
+ {
+  "date": "2026-11-05",
+  "headline": "No high-impact releases; 2 medium-impact on the calendar",
+  "summary": "Medium impact: 17:30 USD Unemployment Claims; 22:00 EUR ECB President Lagarde Speaks.",
+  "openRisk": "No open trades.",
+  "reminders": [
+   "Max risk per trade: 1%. Daily stop: 3R."
+  ],
+  "checklist": [
+   "No new trade in the 15 minutes before or after a high-impact release",
+   "Stop is set before entry and never widened",
+   "Risk per trade at or below the max risk setting",
+   "Stop for the day after hitting the daily stop in R",
+   "Every trade has a written reason before entry"
+  ],
+  "unverified": [],
+  "createdAt": "2026-11-05T06:21:39Z",
+  "bot": "chief"
+ }
+]
