@@ -1,5 +1,11 @@
 [
  {
+  "bot": "tracker",
+  "at": "2026-11-05T08:05:20Z",
+  "status": "ok",
+  "summary": "Nothing to track"
+ },
+ {
   "bot": "chief",
   "at": "2026-11-05T06:21:39Z",
   "status": "ok",
