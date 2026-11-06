@@ -1,5 +1,27 @@
 [
  {
+  "date": "2026-11-06",
+  "headline": "3 high-impact events: USD Average Hourly Earnings m/m at 17:30, USD Non-Farm Employment Change at 17:30, USD Unemployment Rate at 17:30",
+  "summary": "High-impact times (your time zone): 17:30 USD Average Hourly Earnings m/m; 17:30 USD Non-Farm Employment Change; 17:30 USD Unemployment Rate. These touch EUR/USD, Gold (XAUUSD), Nasdaq 100 (NQ), S&P 500 (ES), US 10Y yield. Medium impact: 19:00 USD Prelim UoM Consumer Sentiment; 19:00 USD Prelim UoM Inflation Expectations.",
+  "openRisk": "No open trades.",
+  "reminders": [
+   "Max risk per trade: 1%. Daily stop: 3R.",
+   "No-trade window 17:15–17:45 around USD Average Hourly Earnings m/m.",
+   "No-trade window 17:15–17:45 around USD Non-Farm Employment Change.",
+   "No-trade window 17:15–17:45 around USD Unemployment Rate."
+  ],
+  "checklist": [
+   "No new trade in the 15 minutes before or after a high-impact release",
+   "Stop is set before entry and never widened",
+   "Risk per trade at or below the max risk setting",
+   "Stop for the day after hitting the daily stop in R",
+   "Every trade has a written reason before entry"
+  ],
+  "unverified": [],
+  "createdAt": "2026-11-06T03:57:53Z",
+  "bot": "chief"
+ },
+ {
   "date": "2026-11-05",
   "headline": "No high-impact releases; 2 medium-impact on the calendar",
   "summary": "Medium impact: 17:30 USD Unemployment Claims; 22:00 EUR ECB President Lagarde Speaks.",

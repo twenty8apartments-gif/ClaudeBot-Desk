@@ -1,5 +1,17 @@
 [
  {
+  "bot": "chief",
+  "at": "2026-11-06T03:57:53Z",
+  "status": "ok",
+  "summary": "3 high-impact events: USD Average Hourly Earnings m/m at 17:30, USD Non-Farm Employment Change at 17:30, USD Unemployment Rate at 17:30"
+ },
+ {
+  "bot": "research",
+  "at": "2026-11-06T03:57:53Z",
+  "status": "ok",
+  "summary": "61 events in feed (4 high impact); partial: ff_calendar_nextweek.json: HTTPError"
+ },
+ {
   "bot": "tracker",
   "at": "2026-11-06T03:38:16Z",
   "status": "ok",

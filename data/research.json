@@ -11,7 +11,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-05T06:21:39Z"
+  "createdAt": "2026-11-06T03:57:53Z"
  },
  {
   "id": "2026-11-02-1100-eur-german-retail-sales-m-m",
@@ -25,7 +25,7 @@
   "verified": true,
   "note": "Forecast 0.4%, previous 1.3%",
   "bot": "research",
-  "createdAt": "2026-11-05T06:21:39Z"
+  "createdAt": "2026-11-06T03:57:53Z"
  },
  {
   "id": "2026-11-02-1215-eur-spanish-manufacturing-pmi",
@@ -39,7 +39,7 @@
   "verified": true,
   "note": "Forecast 50.4, previous 51.0",
   "bot": "research",
-  "createdAt": "2026-11-05T06:21:39Z"
+  "createdAt": "2026-11-06T03:57:53Z"
  },
  {
   "id": "2026-11-02-1245-eur-italian-manufacturing-pmi",
@@ -53,7 +53,7 @@
   "verified": true,
   "note": "Forecast 49.9, previous 50.4",
   "bot": "research",
-  "createdAt": "2026-11-05T06:21:39Z"
+  "createdAt": "2026-11-06T03:57:53Z"
  },
  {
   "id": "2026-11-02-1250-eur-french-final-manufacturing-pmi",
@@ -67,7 +67,7 @@
   "verified": true,
   "note": "Forecast 49.3, previous 49.3",
   "bot": "research",
-  "createdAt": "2026-11-05T06:21:39Z"
+  "createdAt": "2026-11-06T03:57:53Z"
  },
  {
   "id": "2026-11-02-1255-eur-german-final-manufacturing-pmi",
@@ -81,7 +81,7 @@
   "verified": true,
   "note": "Forecast 54.2, previous 54.2",
   "bot": "research",
-  "createdAt": "2026-11-05T06:21:39Z"
+  "createdAt": "2026-11-06T03:57:53Z"
  },
  {
   "id": "2026-11-02-1300-eur-final-manufacturing-pmi",
@@ -95,7 +95,7 @@
   "verified": true,
   "note": "Forecast 52.4, previous 52.4",
   "bot": "research",
-  "createdAt": "2026-11-05T06:21:39Z"
+  "createdAt": "2026-11-06T03:57:53Z"
  },
  {
   "id": "2026-11-02-1600-eur-german-buba-president-nagel-speaks",
@@ -109,7 +109,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-05T06:21:39Z"
+  "createdAt": "2026-11-06T03:57:53Z"
  },
  {
   "id": "2026-11-02-1845-usd-final-manufacturing-pmi",
@@ -123,7 +123,7 @@
   "verified": true,
   "note": "Forecast 56.0, previous 56.0",
   "bot": "research",
-  "createdAt": "2026-11-05T06:21:39Z"
+  "createdAt": "2026-11-06T03:57:53Z"
  },
  {
   "id": "2026-11-02-1900-usd-ism-manufacturing-pmi",
@@ -137,7 +137,7 @@
   "verified": true,
   "note": "Forecast 54.5, previous 54.5",
   "bot": "research",
-  "createdAt": "2026-11-05T06:21:39Z"
+  "createdAt": "2026-11-06T03:57:53Z"
  },
  {
   "id": "2026-11-02-1900-usd-construction-spending-m-m",
@@ -151,7 +151,7 @@
   "verified": true,
   "note": "Forecast 0.4%, previous 0.9%",
   "bot": "research",
-  "createdAt": "2026-11-05T06:21:39Z"
+  "createdAt": "2026-11-06T03:57:53Z"
  },
  {
   "id": "2026-11-02-1900-usd-ism-manufacturing-prices",
@@ -165,7 +165,7 @@
   "verified": true,
   "note": "Forecast 77.2, previous 77.9",
   "bot": "research",
-  "createdAt": "2026-11-05T06:21:39Z"
+  "createdAt": "2026-11-06T03:57:53Z"
  },
  {
   "id": "2026-11-02-2300-usd-loan-officer-survey",
@@ -179,7 +179,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-05T06:21:39Z"
+  "createdAt": "2026-11-06T03:57:53Z"
  },
  {
   "id": "2026-11-03-1145-eur-french-gov-budget-balance",
@@ -193,7 +193,7 @@
   "verified": true,
   "note": "previous -159.6B",
   "bot": "research",
-  "createdAt": "2026-11-05T06:21:39Z"
+  "createdAt": "2026-11-06T03:57:53Z"
  },
  {
   "id": "2026-11-03-1300-usd-rcm-tipp-economic-optimism",
@@ -207,7 +207,7 @@
   "verified": true,
   "note": "Forecast 46.2, previous 46.8",
   "bot": "research",
-  "createdAt": "2026-11-05T06:21:39Z"
+  "createdAt": "2026-11-06T03:57:53Z"
  },
  {
   "id": "2026-11-03-1900-usd-jolts-job-openings",
@@ -221,7 +221,7 @@
   "verified": true,
   "note": "Forecast 7.15M, previous 7.08M",
   "bot": "research",
-  "createdAt": "2026-11-05T06:21:39Z"
+  "createdAt": "2026-11-06T03:57:53Z"
  },
  {
   "id": "2026-11-03-1900-usd-factory-orders-m-m",
@@ -235,7 +235,7 @@
   "verified": true,
   "note": "Forecast 1.2%, previous 0.1%",
   "bot": "research",
-  "createdAt": "2026-11-05T06:21:39Z"
+  "createdAt": "2026-11-06T03:57:53Z"
  },
  {
   "id": "2026-11-03-1915-usd-omdia-total-vehicle-sales",
@@ -249,7 +249,7 @@
   "verified": true,
   "note": "Forecast 15.8M, previous 16.0M",
   "bot": "research",
-  "createdAt": "2026-11-05T06:21:39Z"
+  "createdAt": "2026-11-06T03:57:53Z"
  },
  {
   "id": "2026-11-03-1916-usd-congressional-elections",
@@ -263,7 +263,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-05T06:21:39Z"
+  "createdAt": "2026-11-06T03:57:53Z"
  },
  {
   "id": "2026-11-03-2200-eur-german-buba-president-nagel-speaks",
@@ -277,7 +277,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-05T06:21:39Z"
+  "createdAt": "2026-11-06T03:57:53Z"
  },
  {
   "id": "2026-11-04-0130-usd-api-weekly-statistical-bulletin",
@@ -291,7 +291,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-05T06:21:39Z"
+  "createdAt": "2026-11-06T03:57:53Z"
  },
  {
   "id": "2026-11-04-1200-eur-spanish-unemployment-change",
@@ -305,7 +305,7 @@
   "verified": true,
   "note": "Forecast 18.7K, previous 23.6K",
   "bot": "research",
-  "createdAt": "2026-11-05T06:21:39Z"
+  "createdAt": "2026-11-06T03:57:53Z"
  },
  {
   "id": "2026-11-04-1215-eur-spanish-services-pmi",
@@ -319,7 +319,7 @@
   "verified": true,
   "note": "Forecast 57.6, previous 58.3",
   "bot": "research",
-  "createdAt": "2026-11-05T06:21:39Z"
+  "createdAt": "2026-11-06T03:57:53Z"
  },
  {
   "id": "2026-11-04-1245-eur-italian-services-pmi",
@@ -333,7 +333,7 @@
   "verified": true,
   "note": "Forecast 51.4, previous 51.7",
   "bot": "research",
-  "createdAt": "2026-11-05T06:21:39Z"
+  "createdAt": "2026-11-06T03:57:53Z"
  },
  {
   "id": "2026-11-04-1250-eur-french-final-services-pmi",
@@ -347,7 +347,7 @@
   "verified": true,
   "note": "Forecast 48.4, previous 48.4",
   "bot": "research",
-  "createdAt": "2026-11-05T06:21:39Z"
+  "createdAt": "2026-11-06T03:57:53Z"
  },
  {
   "id": "2026-11-04-1255-eur-german-final-services-pmi",
@@ -361,7 +361,7 @@
   "verified": true,
   "note": "Forecast 51.7, previous 51.7",
   "bot": "research",
-  "createdAt": "2026-11-05T06:21:39Z"
+  "createdAt": "2026-11-06T03:57:53Z"
  },
  {
   "id": "2026-11-04-1300-eur-final-services-pmi",
@@ -375,7 +375,7 @@
   "verified": true,
   "note": "Forecast 51.7, previous 51.7",
   "bot": "research",
-  "createdAt": "2026-11-05T06:21:39Z"
+  "createdAt": "2026-11-06T03:57:53Z"
  },
  {
   "id": "2026-11-04-1400-eur-core-cpi-flash-estimate-y-y",
@@ -389,7 +389,7 @@
   "verified": true,
   "note": "Forecast 2.5%, previous 2.5%",
   "bot": "research",
-  "createdAt": "2026-11-05T06:21:39Z"
+  "createdAt": "2026-11-06T03:57:53Z"
  },
  {
   "id": "2026-11-04-1400-eur-cpi-flash-estimate-y-y",
@@ -403,7 +403,7 @@
   "verified": true,
   "note": "Forecast 4.0%, previous 3.8%",
   "bot": "research",
-  "createdAt": "2026-11-05T06:21:39Z"
+  "createdAt": "2026-11-06T03:57:53Z"
  },
  {
   "id": "2026-11-04-1715-usd-adp-non-farm-employment-change",
@@ -417,7 +417,7 @@
   "verified": true,
   "note": "Forecast 67K, previous 90K",
   "bot": "research",
-  "createdAt": "2026-11-05T06:21:39Z"
+  "createdAt": "2026-11-06T03:57:53Z"
  },
  {
   "id": "2026-11-04-1730-usd-trade-balance",
@@ -431,7 +431,7 @@
   "verified": true,
   "note": "Forecast -107.9B, previous -105.6B",
   "bot": "research",
-  "createdAt": "2026-11-05T06:21:39Z"
+  "createdAt": "2026-11-06T03:57:53Z"
  },
  {
   "id": "2026-11-04-1845-usd-final-services-pmi",
@@ -445,7 +445,7 @@
   "verified": true,
   "note": "Forecast 57.9, previous 57.9",
   "bot": "research",
-  "createdAt": "2026-11-05T06:21:39Z"
+  "createdAt": "2026-11-06T03:57:53Z"
  },
  {
   "id": "2026-11-04-1900-usd-ism-services-pmi",
@@ -459,7 +459,7 @@
   "verified": true,
   "note": "Forecast 54.8, previous 54.9",
   "bot": "research",
-  "createdAt": "2026-11-05T06:21:39Z"
+  "createdAt": "2026-11-06T03:57:53Z"
  },
  {
   "id": "2026-11-04-1930-usd-crude-oil-inventories",
@@ -473,7 +473,7 @@
   "verified": true,
   "note": "Forecast -1.7M, previous -1.9M",
   "bot": "research",
-  "createdAt": "2026-11-05T06:21:39Z"
+  "createdAt": "2026-11-06T03:57:53Z"
  },
  {
   "id": "2026-11-05-1100-eur-german-factory-orders-m-m",
@@ -487,7 +487,7 @@
   "verified": true,
   "note": "Forecast 4.6%, previous -10.6%",
   "bot": "research",
-  "createdAt": "2026-11-05T06:21:39Z"
+  "createdAt": "2026-11-06T03:57:53Z"
  },
  {
   "id": "2026-11-05-1145-eur-french-industrial-production-m-m",
@@ -501,7 +501,7 @@
   "verified": true,
   "note": "Forecast 0.3%, previous -0.3%",
   "bot": "research",
-  "createdAt": "2026-11-05T06:21:39Z"
+  "createdAt": "2026-11-06T03:57:53Z"
  },
  {
   "id": "2026-11-05-1300-eur-italian-retail-sales-m-m",
@@ -515,7 +515,35 @@
   "verified": true,
   "note": "Forecast 0.0%, previous 0.3%",
   "bot": "research",
-  "createdAt": "2026-11-05T06:21:39Z"
+  "createdAt": "2026-11-06T03:57:53Z"
+ },
+ {
+  "id": "2026-11-05-1339-eur-spanish-10-y-bond-auction",
+  "date": "2026-11-05",
+  "time": "13:39",
+  "title": "EUR Spanish 10-y Bond Auction",
+  "instrument": "EUR/USD",
+  "impact": "low",
+  "source_title": "Forex Factory calendar",
+  "source_url": "https://www.forexfactory.com/calendar",
+  "verified": true,
+  "note": "previous 4.18|1.6",
+  "bot": "research",
+  "createdAt": "2026-11-06T03:57:53Z"
+ },
+ {
+  "id": "2026-11-05-1355-eur-french-10-y-bond-auction",
+  "date": "2026-11-05",
+  "time": "13:55",
+  "title": "EUR French 10-y Bond Auction",
+  "instrument": "EUR/USD",
+  "impact": "low",
+  "source_title": "Forex Factory calendar",
+  "source_url": "https://www.forexfactory.com/calendar",
+  "verified": true,
+  "note": "previous 4.93|2.0",
+  "bot": "research",
+  "createdAt": "2026-11-06T03:57:53Z"
  },
  {
   "id": "2026-11-05-1400-eur-ppi-m-m",
@@ -529,7 +557,7 @@
   "verified": true,
   "note": "Forecast 2.5%, previous 1.9%",
   "bot": "research",
-  "createdAt": "2026-11-05T06:21:39Z"
+  "createdAt": "2026-11-06T03:57:53Z"
  },
  {
   "id": "2026-11-05-1403-eur-spanish-10-y-bond-auction",
@@ -571,7 +599,7 @@
   "verified": true,
   "note": "previous -19.9%",
   "bot": "research",
-  "createdAt": "2026-11-05T06:21:39Z"
+  "createdAt": "2026-11-06T03:57:53Z"
  },
  {
   "id": "2026-11-05-1730-usd-unemployment-claims",
@@ -585,7 +613,7 @@
   "verified": true,
   "note": "Forecast 197K, previous 194K",
   "bot": "research",
-  "createdAt": "2026-11-05T06:21:39Z"
+  "createdAt": "2026-11-06T03:57:53Z"
  },
  {
   "id": "2026-11-05-1730-usd-prelim-nonfarm-productivity-q-q",
@@ -599,7 +627,7 @@
   "verified": true,
   "note": "Forecast 2.8%, previous 1.4%",
   "bot": "research",
-  "createdAt": "2026-11-05T06:21:39Z"
+  "createdAt": "2026-11-06T03:57:53Z"
  },
  {
   "id": "2026-11-05-1730-usd-prelim-unit-labor-costs-q-q",
@@ -613,7 +641,7 @@
   "verified": true,
   "note": "Forecast 0.3%, previous 1.3%",
   "bot": "research",
-  "createdAt": "2026-11-05T06:21:39Z"
+  "createdAt": "2026-11-06T03:57:53Z"
  },
  {
   "id": "2026-11-05-1750-usd-fomc-member-hammack-speaks",
@@ -627,7 +655,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-05T06:21:39Z"
+  "createdAt": "2026-11-06T03:57:53Z"
  },
  {
   "id": "2026-11-05-1810-usd-fomc-member-barkin-speaks",
@@ -641,7 +669,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-05T06:21:39Z"
+  "createdAt": "2026-11-06T03:57:53Z"
  },
  {
   "id": "2026-11-05-1930-usd-natural-gas-storage",
@@ -655,7 +683,7 @@
   "verified": true,
   "note": "Forecast 81B, previous 80B",
   "bot": "research",
-  "createdAt": "2026-11-05T06:21:39Z"
+  "createdAt": "2026-11-06T03:57:53Z"
  },
  {
   "id": "2026-11-05-2145-eur-german-buba-president-nagel-speaks",
@@ -669,7 +697,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-05T06:21:39Z"
+  "createdAt": "2026-11-06T03:57:53Z"
  },
  {
   "id": "2026-11-05-2200-eur-ecb-president-lagarde-speaks",
@@ -683,7 +711,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-05T06:21:39Z"
+  "createdAt": "2026-11-06T03:57:53Z"
  },
  {
   "id": "2026-11-06-1100-eur-german-industrial-production-m-m",
@@ -697,7 +725,7 @@
   "verified": true,
   "note": "Forecast 0.0%, previous 2.0%",
   "bot": "research",
-  "createdAt": "2026-11-05T06:21:39Z"
+  "createdAt": "2026-11-06T03:57:53Z"
  },
  {
   "id": "2026-11-06-1145-eur-french-trade-balance",
@@ -711,7 +739,7 @@
   "verified": true,
   "note": "Forecast -5.8B, previous -6.1B",
   "bot": "research",
-  "createdAt": "2026-11-05T06:21:39Z"
+  "createdAt": "2026-11-06T03:57:53Z"
  },
  {
   "id": "2026-11-06-1330-usd-fomc-member-williams-speaks",
@@ -725,7 +753,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-05T06:21:39Z"
+  "createdAt": "2026-11-06T03:57:53Z"
  },
  {
   "id": "2026-11-06-1400-eur-retail-sales-m-m",
@@ -739,7 +767,7 @@
   "verified": true,
   "note": "Forecast -0.1%, previous 0.1%",
   "bot": "research",
-  "createdAt": "2026-11-05T06:21:39Z"
+  "createdAt": "2026-11-06T03:57:53Z"
  },
  {
   "id": "2026-11-06-1730-usd-average-hourly-earnings-m-m",
@@ -753,7 +781,7 @@
   "verified": true,
   "note": "Forecast 0.3%, previous 0.1%",
   "bot": "research",
-  "createdAt": "2026-11-05T06:21:39Z"
+  "createdAt": "2026-11-06T03:57:53Z"
  },
  {
   "id": "2026-11-06-1730-usd-non-farm-employment-change",
@@ -767,7 +795,7 @@
   "verified": true,
   "note": "Forecast 65K, previous 29K",
   "bot": "research",
-  "createdAt": "2026-11-05T06:21:39Z"
+  "createdAt": "2026-11-06T03:57:53Z"
  },
  {
   "id": "2026-11-06-1730-usd-unemployment-rate",
@@ -781,7 +809,7 @@
   "verified": true,
   "note": "Forecast 4.2%, previous 4.2%",
   "bot": "research",
-  "createdAt": "2026-11-05T06:21:39Z"
+  "createdAt": "2026-11-06T03:57:53Z"
  },
  {
   "id": "2026-11-06-1810-usd-fomc-member-musalem-speaks",
@@ -795,7 +823,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-05T06:21:39Z"
+  "createdAt": "2026-11-06T03:57:53Z"
  },
  {
   "id": "2026-11-06-1900-usd-prelim-uom-consumer-sentiment",
@@ -809,7 +837,7 @@
   "verified": true,
   "note": "Forecast 48.1, previous 46.3",
   "bot": "research",
-  "createdAt": "2026-11-05T06:21:39Z"
+  "createdAt": "2026-11-06T03:57:53Z"
  },
  {
   "id": "2026-11-06-1900-usd-prelim-uom-inflation-expectations",
@@ -823,7 +851,7 @@
   "verified": true,
   "note": "previous 4.7%",
   "bot": "research",
-  "createdAt": "2026-11-05T06:21:39Z"
+  "createdAt": "2026-11-06T03:57:53Z"
  },
  {
   "id": "2026-11-06-2115-usd-fomc-member-bowman-speaks",
@@ -837,7 +865,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-05T06:21:39Z"
+  "createdAt": "2026-11-06T03:57:53Z"
  },
  {
   "id": "2026-11-07-0000-usd-consumer-credit-m-m",
@@ -851,6 +879,6 @@
   "verified": true,
   "note": "Forecast 13.4B, previous 8.3B",
   "bot": "research",
-  "createdAt": "2026-11-05T06:21:39Z"
+  "createdAt": "2026-11-06T03:57:53Z"
  }
 ]
