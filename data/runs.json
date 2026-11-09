@@ -1,5 +1,17 @@
 [
  {
+  "bot": "chief",
+  "at": "2026-11-09T04:00:22Z",
+  "status": "ok",
+  "summary": "Quiet calendar: no high- or medium-impact releases for your watchlist"
+ },
+ {
+  "bot": "research",
+  "at": "2026-11-09T04:00:22Z",
+  "status": "ok",
+  "summary": "55 events in feed (4 high impact); partial: ff_calendar_nextweek.json: HTTPError"
+ },
+ {
   "bot": "tracker",
   "at": "2026-11-09T03:41:05Z",
   "status": "ok",
