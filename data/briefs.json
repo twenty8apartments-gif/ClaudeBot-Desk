@@ -1,5 +1,26 @@
 [
  {
+  "date": "2026-11-10",
+  "headline": "2 high-impact events: USD Core CPI m/m at 17:30, USD CPI m/m at 17:30",
+  "summary": "High-impact times (your time zone): 17:30 USD Core CPI m/m; 17:30 USD CPI m/m. These touch EUR/USD, Gold (XAUUSD), Nasdaq 100 (NQ), S&P 500 (ES), US 10Y yield. Medium impact: 13:00 USD FOMC Member Waller Speaks.",
+  "openRisk": "No open trades.",
+  "reminders": [
+   "Max risk per trade: 1%. Daily stop: 3R.",
+   "No-trade window 17:15–17:45 around USD Core CPI m/m.",
+   "No-trade window 17:15–17:45 around USD CPI m/m."
+  ],
+  "checklist": [
+   "No new trade in the 15 minutes before or after a high-impact release",
+   "Stop is set before entry and never widened",
+   "Risk per trade at or below the max risk setting",
+   "Stop for the day after hitting the daily stop in R",
+   "Every trade has a written reason before entry"
+  ],
+  "unverified": [],
+  "createdAt": "2026-11-10T03:56:18Z",
+  "bot": "chief"
+ },
+ {
   "date": "2026-11-09",
   "headline": "Quiet calendar: no high- or medium-impact releases for your watchlist",
   "summary": "Nothing scheduled that touches your watchlist.",

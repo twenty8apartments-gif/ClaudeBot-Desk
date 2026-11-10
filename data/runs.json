@@ -1,5 +1,17 @@
 [
  {
+  "bot": "chief",
+  "at": "2026-11-10T03:56:18Z",
+  "status": "ok",
+  "summary": "2 high-impact events: USD Core CPI m/m at 17:30, USD CPI m/m at 17:30"
+ },
+ {
+  "bot": "research",
+  "at": "2026-11-10T03:56:18Z",
+  "status": "ok",
+  "summary": "57 events in feed (4 high impact); partial: ff_calendar_nextweek.json: HTTPError"
+ },
+ {
   "bot": "tracker",
   "at": "2026-11-10T03:34:21Z",
   "status": "ok",
