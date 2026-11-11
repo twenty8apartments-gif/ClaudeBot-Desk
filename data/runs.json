@@ -1,6 +1,12 @@
 [
  {
   "bot": "tracker",
+  "at": "2026-11-11T14:00:16Z",
+  "status": "ok",
+  "summary": "Nothing to track"
+ },
+ {
+  "bot": "tracker",
   "at": "2026-11-11T12:44:56Z",
   "status": "ok",
   "summary": "Nothing to track"
@@ -478,12 +484,6 @@
   "at": "2026-11-08T08:09:57Z",
   "status": "ok",
   "summary": "Records for 2026-W45: 0 gaps"
- },
- {
-  "bot": "tracker",
-  "at": "2026-11-08T07:47:06Z",
-  "status": "ok",
-  "summary": "Nothing to track"
  },
  {
   "bot": "journal",
