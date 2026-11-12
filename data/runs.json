@@ -1,6 +1,12 @@
 [
  {
   "bot": "tracker",
+  "at": "2026-11-12T11:44:13Z",
+  "status": "ok",
+  "summary": "Nothing to track"
+ },
+ {
+  "bot": "tracker",
   "at": "2026-11-12T10:47:02Z",
   "status": "ok",
   "summary": "Nothing to track"
@@ -488,12 +494,6 @@
  {
   "bot": "tracker",
   "at": "2026-11-09T03:41:05Z",
-  "status": "ok",
-  "summary": "Nothing to track"
- },
- {
-  "bot": "tracker",
-  "at": "2026-11-09T01:55:29Z",
   "status": "ok",
   "summary": "Nothing to track"
  },
