@@ -893,7 +893,7 @@
   "verified": true,
   "note": "Forecast 19.2B, previous 19.5B",
   "bot": "research",
-  "createdAt": "2026-11-11T03:59:54Z"
+  "createdAt": "2026-11-12T03:59:47Z"
  },
  {
   "id": "2026-11-09-1330-eur-sentix-investor-confidence",
@@ -907,7 +907,7 @@
   "verified": true,
   "note": "Forecast 2.1, previous 2.7",
   "bot": "research",
-  "createdAt": "2026-11-11T03:59:54Z"
+  "createdAt": "2026-11-12T03:59:47Z"
  },
  {
   "id": "2026-11-09-1415-eur-ecofin-meetings",
@@ -921,7 +921,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-11T03:59:54Z"
+  "createdAt": "2026-11-12T03:59:47Z"
  },
  {
   "id": "2026-11-09-1415-eur-eurogroup-meetings",
@@ -935,7 +935,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-11T03:59:54Z"
+  "createdAt": "2026-11-12T03:59:47Z"
  },
  {
   "id": "2026-11-09-1740-usd-fomc-member-bowman-speaks",
@@ -949,7 +949,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-11T03:59:54Z"
+  "createdAt": "2026-11-12T03:59:47Z"
  },
  {
   "id": "2026-11-09-1900-usd-final-wholesale-inventories-m-m",
@@ -963,7 +963,7 @@
   "verified": true,
   "note": "Forecast 0.6%, previous 0.6%",
   "bot": "research",
-  "createdAt": "2026-11-11T03:59:54Z"
+  "createdAt": "2026-11-12T03:59:47Z"
  },
  {
   "id": "2026-11-09-1900-usd-fomc-member-goolsbee-speaks",
@@ -977,7 +977,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-11T03:59:54Z"
+  "createdAt": "2026-11-12T03:59:47Z"
  },
  {
   "id": "2026-11-09-2115-usd-fomc-member-barkin-speaks",
@@ -991,7 +991,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-11T03:59:54Z"
+  "createdAt": "2026-11-12T03:59:47Z"
  },
  {
   "id": "2026-11-10-1300-usd-fomc-member-waller-speaks",
@@ -1005,7 +1005,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-11T03:59:54Z"
+  "createdAt": "2026-11-12T03:59:47Z"
  },
  {
   "id": "2026-11-10-1500-usd-nfib-small-business-index",
@@ -1019,7 +1019,7 @@
   "verified": true,
   "note": "Forecast 98.0, previous 97.9",
   "bot": "research",
-  "createdAt": "2026-11-11T03:59:54Z"
+  "createdAt": "2026-11-12T03:59:47Z"
  },
  {
   "id": "2026-11-10-1714-usd-adp-weekly-employment-change",
@@ -1033,7 +1033,7 @@
   "verified": true,
   "note": "previous 16.8K",
   "bot": "research",
-  "createdAt": "2026-11-11T03:59:54Z"
+  "createdAt": "2026-11-12T03:59:47Z"
  },
  {
   "id": "2026-11-10-1715-usd-adp-weekly-employment-change",
@@ -1047,7 +1047,7 @@
   "verified": true,
   "note": "previous 19.5K",
   "bot": "research",
-  "createdAt": "2026-11-11T03:59:54Z"
+  "createdAt": "2026-11-12T03:59:47Z"
  },
  {
   "id": "2026-11-10-1716-usd-adp-weekly-employment-change",
@@ -1075,7 +1075,7 @@
   "verified": true,
   "note": "Forecast 0.2%, previous 0.3%",
   "bot": "research",
-  "createdAt": "2026-11-11T03:59:54Z"
+  "createdAt": "2026-11-12T03:59:47Z"
  },
  {
   "id": "2026-11-10-1730-usd-cpi-m-m",
@@ -1089,7 +1089,7 @@
   "verified": true,
   "note": "Forecast 0.3%, previous 0.6%",
   "bot": "research",
-  "createdAt": "2026-11-11T03:59:54Z"
+  "createdAt": "2026-11-12T03:59:47Z"
  },
  {
   "id": "2026-11-10-1950-usd-fomc-member-logan-speaks",
@@ -1103,7 +1103,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-11T03:59:54Z"
+  "createdAt": "2026-11-12T03:59:47Z"
  },
  {
   "id": "2026-11-10-2201-usd-10-y-bond-auction",
@@ -1117,7 +1117,7 @@
   "verified": true,
   "note": "previous 5.30|2.8",
   "bot": "research",
-  "createdAt": "2026-11-11T03:59:54Z"
+  "createdAt": "2026-11-12T03:59:47Z"
  },
  {
   "id": "2026-11-10-2230-usd-fomc-member-schmid-speaks",
@@ -1131,7 +1131,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-11T03:59:54Z"
+  "createdAt": "2026-11-12T03:59:47Z"
  },
  {
   "id": "2026-11-11-1101-eur-french-bank-holiday",
@@ -1145,7 +1145,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-11T03:59:54Z"
+  "createdAt": "2026-11-12T03:59:47Z"
  },
  {
   "id": "2026-11-11-1700-usd-bank-holiday",
@@ -1159,7 +1159,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-11T03:59:54Z"
+  "createdAt": "2026-11-12T03:59:47Z"
  },
  {
   "id": "2026-11-11-0030-usd-fomc-member-bowman-speaks",
@@ -1173,7 +1173,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-11T03:59:54Z"
+  "createdAt": "2026-11-12T03:59:47Z"
  },
  {
   "id": "2026-11-11-0130-usd-api-weekly-statistical-bulletin",
@@ -1187,7 +1187,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-11T03:59:54Z"
+  "createdAt": "2026-11-12T03:59:47Z"
  },
  {
   "id": "2026-11-11-0330-usd-fomc-member-bowman-speaks",
@@ -1201,7 +1201,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-11T03:59:54Z"
+  "createdAt": "2026-11-12T03:59:47Z"
  },
  {
   "id": "2026-11-11-0330-usd-fomc-member-paulson-speaks",
@@ -1215,7 +1215,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-11T03:59:54Z"
+  "createdAt": "2026-11-12T03:59:47Z"
  },
  {
   "id": "2026-11-11-1100-eur-german-final-cpi-m-m",
@@ -1229,7 +1229,7 @@
   "verified": true,
   "note": "Forecast -0.2%, previous -0.2%",
   "bot": "research",
-  "createdAt": "2026-11-11T03:59:54Z"
+  "createdAt": "2026-11-12T03:59:47Z"
  },
  {
   "id": "2026-11-11-1215-eur-german-buba-president-nagel-speaks",
@@ -1243,7 +1243,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-11T03:59:54Z"
+  "createdAt": "2026-11-12T03:59:47Z"
  },
  {
   "id": "2026-11-11-1220-eur-german-buba-president-nagel-speaks",
@@ -1271,7 +1271,7 @@
   "verified": true,
   "note": "Forecast 0.7%, previous -1.3%",
   "bot": "research",
-  "createdAt": "2026-11-11T03:59:54Z"
+  "createdAt": "2026-11-12T03:59:47Z"
  },
  {
   "id": "2026-11-11-1345-eur-ecb-president-lagarde-speaks",
@@ -1285,7 +1285,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-11T03:59:54Z"
+  "createdAt": "2026-11-12T03:59:47Z"
  },
  {
   "id": "2026-11-11-1434-eur-german-30-y-bond-auction",
@@ -1302,6 +1302,20 @@
   "createdAt": "2026-11-11T03:59:54Z"
  },
  {
+  "id": "2026-11-11-1435-eur-german-30-y-bond-auction",
+  "date": "2026-11-11",
+  "time": "14:35",
+  "title": "EUR German 30-y Bond Auction",
+  "instrument": "EUR/USD",
+  "impact": "low",
+  "source_title": "Forex Factory calendar",
+  "source_url": "https://www.forexfactory.com/calendar",
+  "verified": true,
+  "note": "previous 3.80|1.4",
+  "bot": "research",
+  "createdAt": "2026-11-12T03:59:47Z"
+ },
+ {
   "id": "2026-11-12-1300-eur-ecb-economic-bulletin",
   "date": "2026-11-12",
   "time": "13:00",
@@ -1313,7 +1327,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-11T03:59:54Z"
+  "createdAt": "2026-11-12T03:59:47Z"
  },
  {
   "id": "2026-11-12-1400-eur-eu-economic-forecasts",
@@ -1341,7 +1355,7 @@
   "verified": true,
   "note": "Forecast 194K, previous 189K",
   "bot": "research",
-  "createdAt": "2026-11-11T03:59:54Z"
+  "createdAt": "2026-11-12T03:59:47Z"
  },
  {
   "id": "2026-11-12-1730-usd-fomc-member-hammack-speaks",
@@ -1355,7 +1369,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-11T03:59:54Z"
+  "createdAt": "2026-11-12T03:59:47Z"
  },
  {
   "id": "2026-11-12-1800-usd-fomc-member-hammack-speaks",
@@ -1383,7 +1397,7 @@
   "verified": true,
   "note": "Forecast 3.89M, previous 3.99M",
   "bot": "research",
-  "createdAt": "2026-11-11T03:59:54Z"
+  "createdAt": "2026-11-12T03:59:47Z"
  },
  {
   "id": "2026-11-12-1900-usd-fomc-member-barr-speaks",
@@ -1397,7 +1411,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-11T03:59:54Z"
+  "createdAt": "2026-11-12T03:59:47Z"
  },
  {
   "id": "2026-11-12-1900-usd-mortgage-delinquencies",
@@ -1411,7 +1425,7 @@
   "verified": true,
   "note": "previous 4.37%",
   "bot": "research",
-  "createdAt": "2026-11-11T03:59:54Z"
+  "createdAt": "2026-11-12T03:59:47Z"
  },
  {
   "id": "2026-11-12-2015-usd-fomc-member-goolsbee-speaks",
@@ -1425,7 +1439,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-11T03:59:54Z"
+  "createdAt": "2026-11-12T03:59:47Z"
  },
  {
   "id": "2026-11-12-2030-usd-fomc-member-goolsbee-speaks",
@@ -1453,7 +1467,7 @@
   "verified": true,
   "note": "Forecast -0.6M, previous -0.9M",
   "bot": "research",
-  "createdAt": "2026-11-11T03:59:54Z"
+  "createdAt": "2026-11-12T03:59:47Z"
  },
  {
   "id": "2026-11-12-2130-eur-german-buba-president-nagel-speaks",
@@ -1467,7 +1481,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-11T03:59:54Z"
+  "createdAt": "2026-11-12T03:59:47Z"
  },
  {
   "id": "2026-11-12-2201-usd-30-y-bond-auction",
@@ -1481,7 +1495,7 @@
   "verified": true,
   "note": "previous 5.62|2.5",
   "bot": "research",
-  "createdAt": "2026-11-11T03:59:54Z"
+  "createdAt": "2026-11-12T03:59:47Z"
  },
  {
   "id": "2026-11-12-2210-usd-fomc-member-daly-speaks",
@@ -1495,7 +1509,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-11T03:59:54Z"
+  "createdAt": "2026-11-12T03:59:47Z"
  },
  {
   "id": "2026-11-12-2230-usd-fomc-member-schmid-speaks",
@@ -1509,7 +1523,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-11T03:59:54Z"
+  "createdAt": "2026-11-12T03:59:47Z"
  },
  {
   "id": "2026-11-12-2300-usd-federal-budget-balance",
@@ -1523,7 +1537,7 @@
   "verified": true,
   "note": "Forecast -298.6B, previous -26.9B",
   "bot": "research",
-  "createdAt": "2026-11-11T03:59:54Z"
+  "createdAt": "2026-11-12T03:59:47Z"
  },
  {
   "id": "2026-11-12-2330-eur-ecb-president-lagarde-speaks",
@@ -1537,7 +1551,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-11T03:59:54Z"
+  "createdAt": "2026-11-12T03:59:47Z"
  },
  {
   "id": "2026-11-13-0330-usd-fomc-member-williams-speaks",
@@ -1551,7 +1565,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-11T03:59:54Z"
+  "createdAt": "2026-11-12T03:59:47Z"
  },
  {
   "id": "2026-11-13-1100-eur-german-wpi-m-m",
@@ -1565,7 +1579,7 @@
   "verified": true,
   "note": "Forecast 0.4%, previous 1.9%",
   "bot": "research",
-  "createdAt": "2026-11-11T03:59:54Z"
+  "createdAt": "2026-11-12T03:59:47Z"
  },
  {
   "id": "2026-11-13-1145-eur-french-final-cpi-m-m",
@@ -1579,7 +1593,7 @@
   "verified": true,
   "note": "Forecast 0.4%, previous 0.4%",
   "bot": "research",
-  "createdAt": "2026-11-11T03:59:54Z"
+  "createdAt": "2026-11-12T03:59:47Z"
  },
  {
   "id": "2026-11-13-1300-eur-italian-trade-balance",
@@ -1593,7 +1607,7 @@
   "verified": true,
   "note": "Forecast 2.84B, previous 1.77B",
   "bot": "research",
-  "createdAt": "2026-11-11T03:59:54Z"
+  "createdAt": "2026-11-12T03:59:47Z"
  },
  {
   "id": "2026-11-13-1400-eur-flash-employment-change-q-q",
@@ -1607,7 +1621,7 @@
   "verified": true,
   "note": "Forecast 0.2%, previous 0.1%",
   "bot": "research",
-  "createdAt": "2026-11-11T03:59:54Z"
+  "createdAt": "2026-11-12T03:59:47Z"
  },
  {
   "id": "2026-11-13-1400-eur-flash-gdp-q-q",
@@ -1621,7 +1635,7 @@
   "verified": true,
   "note": "Forecast 0.4%, previous 0.4%",
   "bot": "research",
-  "createdAt": "2026-11-11T03:59:54Z"
+  "createdAt": "2026-11-12T03:59:47Z"
  },
  {
   "id": "2026-11-13-1400-eur-trade-balance",
@@ -1635,7 +1649,7 @@
   "verified": true,
   "note": "Forecast -4.5B, previous -6.8B",
   "bot": "research",
-  "createdAt": "2026-11-11T03:59:54Z"
+  "createdAt": "2026-11-12T03:59:47Z"
  },
  {
   "id": "2026-11-13-1730-usd-core-ppi-m-m",
@@ -1649,7 +1663,7 @@
   "verified": true,
   "note": "Forecast 0.3%, previous 0.7%",
   "bot": "research",
-  "createdAt": "2026-11-11T03:59:54Z"
+  "createdAt": "2026-11-12T03:59:47Z"
  },
  {
   "id": "2026-11-13-1730-usd-ppi-m-m",
@@ -1663,7 +1677,7 @@
   "verified": true,
   "note": "Forecast 0.4%, previous 1.3%",
   "bot": "research",
-  "createdAt": "2026-11-11T03:59:54Z"
+  "createdAt": "2026-11-12T03:59:47Z"
  },
  {
   "id": "2026-11-13-1810-usd-fomc-member-collins-speaks",
@@ -1677,7 +1691,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-11T03:59:54Z"
+  "createdAt": "2026-11-12T03:59:47Z"
  },
  {
   "id": "2026-11-13-1840-usd-fomc-member-logan-speaks",
@@ -1691,7 +1705,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-11T03:59:54Z"
+  "createdAt": "2026-11-12T03:59:47Z"
  },
  {
   "id": "2026-11-13-1930-usd-natural-gas-storage",
@@ -1705,7 +1719,7 @@
   "verified": true,
   "note": "Forecast 65B, previous 77B",
   "bot": "research",
-  "createdAt": "2026-11-11T03:59:54Z"
+  "createdAt": "2026-11-12T03:59:47Z"
  },
  {
   "id": "2026-11-13-1950-usd-fomc-member-bowman-speaks",
@@ -1719,7 +1733,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-11T03:59:54Z"
+  "createdAt": "2026-11-12T03:59:47Z"
  },
  {
   "id": "2026-11-13-2000-eur-german-buba-president-nagel-speaks",
@@ -1733,7 +1747,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-11T03:59:54Z"
+  "createdAt": "2026-11-12T03:59:47Z"
  },
  {
   "id": "2026-11-13-2100-usd-fomc-member-daly-speaks",
@@ -1747,7 +1761,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-11T03:59:54Z"
+  "createdAt": "2026-11-12T03:59:47Z"
  },
  {
   "id": "2026-11-14-0400-usd-fomc-member-jefferson-speaks",
@@ -1761,6 +1775,6 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-11T03:59:54Z"
+  "createdAt": "2026-11-12T03:59:47Z"
  }
 ]
