@@ -1,5 +1,17 @@
 [
  {
+  "bot": "chief",
+  "at": "2026-11-13T03:58:36Z",
+  "status": "ok",
+  "summary": "2 high-impact events: USD Core PPI m/m at 17:30, USD PPI m/m at 17:30"
+ },
+ {
+  "bot": "research",
+  "at": "2026-11-13T03:58:35Z",
+  "status": "ok",
+  "summary": "58 events in feed (4 high impact); partial: ff_calendar_nextweek.json: HTTPError"
+ },
+ {
   "bot": "tracker",
   "at": "2026-11-13T03:37:59Z",
   "status": "ok",
