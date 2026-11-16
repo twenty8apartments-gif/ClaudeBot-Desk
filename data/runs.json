@@ -1,5 +1,17 @@
 [
  {
+  "bot": "chief",
+  "at": "2026-11-16T04:20:48Z",
+  "status": "ok",
+  "summary": "1 high-impact event: USD Fed Chairman Warsh Speaks at 21:00"
+ },
+ {
+  "bot": "research",
+  "at": "2026-11-16T04:20:48Z",
+  "status": "ok",
+  "summary": "58 events in feed (4 high impact); partial: ff_calendar_nextweek.json: HTTPError"
+ },
+ {
   "bot": "tracker",
   "at": "2026-11-16T03:52:35Z",
   "status": "ok",
