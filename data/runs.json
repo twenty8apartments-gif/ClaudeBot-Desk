@@ -1,5 +1,17 @@
 [
  {
+  "bot": "chief",
+  "at": "2026-11-17T03:59:27Z",
+  "status": "ok",
+  "summary": "2 high-impact events: USD Core Retail Sales m/m at 17:30, USD Retail Sales m/m at 17:30"
+ },
+ {
+  "bot": "research",
+  "at": "2026-11-17T03:59:27Z",
+  "status": "ok",
+  "summary": "62 events in feed (4 high impact); partial: ff_calendar_nextweek.json: HTTPError"
+ },
+ {
   "bot": "tracker",
   "at": "2026-11-17T03:39:53Z",
   "status": "ok",
