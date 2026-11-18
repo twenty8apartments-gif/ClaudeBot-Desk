@@ -1,5 +1,17 @@
 [
  {
+  "bot": "chief",
+  "at": "2026-11-18T04:01:43Z",
+  "status": "ok",
+  "summary": "1 high-impact event: USD FOMC Meeting Minutes at 23:00"
+ },
+ {
+  "bot": "research",
+  "at": "2026-11-18T04:01:43Z",
+  "status": "ok",
+  "summary": "62 events in feed (4 high impact); partial: ff_calendar_nextweek.json: HTTPError"
+ },
+ {
   "bot": "tracker",
   "at": "2026-11-18T03:41:58Z",
   "status": "ok",

@@ -1,5 +1,25 @@
 [
  {
+  "date": "2026-11-18",
+  "headline": "1 high-impact event: USD FOMC Meeting Minutes at 23:00",
+  "summary": "High-impact times (your time zone): 23:00 USD FOMC Meeting Minutes. These touch EUR/USD, Gold (XAUUSD), Nasdaq 100 (NQ), S&P 500 (ES), US 10Y yield. Medium impact: 13:00 EUR ECB Financial Stability Review; 18:25 EUR ECB President Lagarde Speaks.",
+  "openRisk": "No open trades.",
+  "reminders": [
+   "Max risk per trade: 1%. Daily stop: 3R.",
+   "No-trade window 22:45–23:15 around USD FOMC Meeting Minutes."
+  ],
+  "checklist": [
+   "No new trade in the 15 minutes before or after a high-impact release",
+   "Stop is set before entry and never widened",
+   "Risk per trade at or below the max risk setting",
+   "Stop for the day after hitting the daily stop in R",
+   "Every trade has a written reason before entry"
+  ],
+  "unverified": [],
+  "createdAt": "2026-11-18T04:01:43Z",
+  "bot": "chief"
+ },
+ {
   "date": "2026-11-17",
   "headline": "2 high-impact events: USD Core Retail Sales m/m at 17:30, USD Retail Sales m/m at 17:30",
   "summary": "High-impact times (your time zone): 17:30 USD Core Retail Sales m/m; 17:30 USD Retail Sales m/m. These touch EUR/USD, Gold (XAUUSD), Nasdaq 100 (NQ), S&P 500 (ES), US 10Y yield.",
