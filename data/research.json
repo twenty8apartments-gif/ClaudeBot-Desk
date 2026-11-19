@@ -1803,7 +1803,7 @@
   "verified": true,
   "note": "Forecast 0.3%, previous -0.5%",
   "bot": "research",
-  "createdAt": "2026-11-18T04:01:43Z"
+  "createdAt": "2026-11-19T04:03:38Z"
  },
  {
   "id": "2026-11-16-1400-usd-fomc-member-barr-speaks",
@@ -1817,7 +1817,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-18T04:01:43Z"
+  "createdAt": "2026-11-19T04:03:38Z"
  },
  {
   "id": "2026-11-16-1730-usd-empire-state-manufacturing-index",
@@ -1831,7 +1831,7 @@
   "verified": true,
   "note": "Forecast 17.6, previous 25.5",
   "bot": "research",
-  "createdAt": "2026-11-18T04:01:43Z"
+  "createdAt": "2026-11-19T04:03:38Z"
  },
  {
   "id": "2026-11-16-1805-usd-fomc-member-williams-speaks",
@@ -1845,7 +1845,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-18T04:01:43Z"
+  "createdAt": "2026-11-19T04:03:38Z"
  },
  {
   "id": "2026-11-16-1845-usd-cleveland-fed-inflation-expectations",
@@ -1859,7 +1859,7 @@
   "verified": true,
   "note": "previous 3.3%",
   "bot": "research",
-  "createdAt": "2026-11-18T04:01:43Z"
+  "createdAt": "2026-11-19T04:03:38Z"
  },
  {
   "id": "2026-11-16-1848-usd-cleveland-fed-inflation-expectations",
@@ -1887,7 +1887,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-18T04:01:43Z"
+  "createdAt": "2026-11-19T04:03:38Z"
  },
  {
   "id": "2026-11-16-2315-usd-fomc-member-hammack-speaks",
@@ -1901,7 +1901,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-18T04:01:43Z"
+  "createdAt": "2026-11-19T04:03:38Z"
  },
  {
   "id": "2026-11-17-0310-usd-fomc-member-barkin-speaks",
@@ -1915,7 +1915,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-18T04:01:43Z"
+  "createdAt": "2026-11-19T04:03:38Z"
  },
  {
   "id": "2026-11-17-0330-usd-fomc-member-goolsbee-speaks",
@@ -1929,7 +1929,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-18T04:01:43Z"
+  "createdAt": "2026-11-19T04:03:38Z"
  },
  {
   "id": "2026-11-17-1400-eur-eu-economic-forecasts",
@@ -1943,7 +1943,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-18T04:01:43Z"
+  "createdAt": "2026-11-19T04:03:38Z"
  },
  {
   "id": "2026-11-17-1400-eur-zew-economic-sentiment",
@@ -1957,7 +1957,7 @@
   "verified": true,
   "note": "Forecast 19.1, previous 18.5",
   "bot": "research",
-  "createdAt": "2026-11-18T04:01:43Z"
+  "createdAt": "2026-11-19T04:03:38Z"
  },
  {
   "id": "2026-11-17-1400-eur-german-zew-economic-sentiment",
@@ -1971,7 +1971,7 @@
   "verified": true,
   "note": "Forecast 28.8, previous 28.1",
   "bot": "research",
-  "createdAt": "2026-11-18T04:01:43Z"
+  "createdAt": "2026-11-19T04:03:38Z"
  },
  {
   "id": "2026-11-17-1630-usd-fomc-member-musalem-speaks",
@@ -1985,7 +1985,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-18T04:01:43Z"
+  "createdAt": "2026-11-19T04:03:38Z"
  },
  {
   "id": "2026-11-17-1715-usd-adp-weekly-employment-change",
@@ -1999,7 +1999,7 @@
   "verified": true,
   "note": "previous 19.8K",
   "bot": "research",
-  "createdAt": "2026-11-18T04:01:43Z"
+  "createdAt": "2026-11-19T04:03:38Z"
  },
  {
   "id": "2026-11-17-1730-usd-core-retail-sales-m-m",
@@ -2013,7 +2013,7 @@
   "verified": true,
   "note": "Forecast 0.4%, previous 0.9%",
   "bot": "research",
-  "createdAt": "2026-11-18T04:01:43Z"
+  "createdAt": "2026-11-19T04:03:38Z"
  },
  {
   "id": "2026-11-17-1730-usd-retail-sales-m-m",
@@ -2027,7 +2027,7 @@
   "verified": true,
   "note": "Forecast 0.1%, previous 0.8%",
   "bot": "research",
-  "createdAt": "2026-11-18T04:01:43Z"
+  "createdAt": "2026-11-19T04:03:38Z"
  },
  {
   "id": "2026-11-17-1730-usd-import-prices-m-m",
@@ -2041,7 +2041,7 @@
   "verified": true,
   "note": "Forecast 0.7%, previous 1.1%",
   "bot": "research",
-  "createdAt": "2026-11-18T04:01:43Z"
+  "createdAt": "2026-11-19T04:03:38Z"
  },
  {
   "id": "2026-11-17-1810-usd-fomc-member-waller-speaks",
@@ -2055,7 +2055,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-18T04:01:43Z"
+  "createdAt": "2026-11-19T04:03:38Z"
  },
  {
   "id": "2026-11-17-1815-usd-capacity-utilization-rate",
@@ -2069,7 +2069,7 @@
   "verified": true,
   "note": "Forecast 76.8%, previous 76.9%",
   "bot": "research",
-  "createdAt": "2026-11-18T04:01:43Z"
+  "createdAt": "2026-11-19T04:03:38Z"
  },
  {
   "id": "2026-11-17-1815-usd-industrial-production-m-m",
@@ -2083,7 +2083,7 @@
   "verified": true,
   "note": "Forecast 0.0%, previous 0.7%",
   "bot": "research",
-  "createdAt": "2026-11-18T04:01:43Z"
+  "createdAt": "2026-11-19T04:03:38Z"
  },
  {
   "id": "2026-11-17-1830-usd-fomc-member-hammack-speaks",
@@ -2097,7 +2097,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-18T04:01:43Z"
+  "createdAt": "2026-11-19T04:03:38Z"
  },
  {
   "id": "2026-11-17-1900-usd-business-inventories-m-m",
@@ -2111,7 +2111,7 @@
   "verified": true,
   "note": "Forecast 0.5%, previous 0.4%",
   "bot": "research",
-  "createdAt": "2026-11-18T04:01:43Z"
+  "createdAt": "2026-11-19T04:03:38Z"
  },
  {
   "id": "2026-11-17-1900-usd-nahb-housing-market-index",
@@ -2125,7 +2125,7 @@
   "verified": true,
   "note": "Forecast 29, previous 29",
   "bot": "research",
-  "createdAt": "2026-11-18T04:01:43Z"
+  "createdAt": "2026-11-19T04:03:38Z"
  },
  {
   "id": "2026-11-17-2325-usd-fomc-member-williams-speaks",
@@ -2139,7 +2139,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-18T04:01:43Z"
+  "createdAt": "2026-11-19T04:03:38Z"
  },
  {
   "id": "2026-11-18-0130-usd-api-weekly-statistical-bulletin",
@@ -2153,7 +2153,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-18T04:01:43Z"
+  "createdAt": "2026-11-19T04:03:38Z"
  },
  {
   "id": "2026-11-18-0645-eur-german-buba-president-nagel-speaks",
@@ -2167,7 +2167,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-18T04:01:43Z"
+  "createdAt": "2026-11-19T04:03:38Z"
  },
  {
   "id": "2026-11-18-1300-eur-ecb-financial-stability-review",
@@ -2181,7 +2181,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-18T04:01:43Z"
+  "createdAt": "2026-11-19T04:03:38Z"
  },
  {
   "id": "2026-11-18-1400-eur-final-core-cpi-y-y",
@@ -2195,7 +2195,7 @@
   "verified": true,
   "note": "Forecast 2.5%, previous 2.5%",
   "bot": "research",
-  "createdAt": "2026-11-18T04:01:43Z"
+  "createdAt": "2026-11-19T04:03:38Z"
  },
  {
   "id": "2026-11-18-1400-eur-final-cpi-y-y",
@@ -2209,7 +2209,7 @@
   "verified": true,
   "note": "Forecast 4.0%, previous 4.0%",
   "bot": "research",
-  "createdAt": "2026-11-18T04:01:43Z"
+  "createdAt": "2026-11-19T04:03:38Z"
  },
  {
   "id": "2026-11-18-1730-usd-building-permits",
@@ -2223,7 +2223,7 @@
   "verified": true,
   "note": "Forecast 1.38M, previous 1.40M",
   "bot": "research",
-  "createdAt": "2026-11-18T04:01:43Z"
+  "createdAt": "2026-11-19T04:03:38Z"
  },
  {
   "id": "2026-11-18-1730-usd-housing-starts",
@@ -2237,7 +2237,7 @@
   "verified": true,
   "note": "Forecast 1.25M, previous 1.22M",
   "bot": "research",
-  "createdAt": "2026-11-18T04:01:43Z"
+  "createdAt": "2026-11-19T04:03:38Z"
  },
  {
   "id": "2026-11-18-1825-eur-ecb-president-lagarde-speaks",
@@ -2251,7 +2251,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-18T04:01:43Z"
+  "createdAt": "2026-11-19T04:03:38Z"
  },
  {
   "id": "2026-11-18-1900-usd-pending-home-sales-m-m",
@@ -2265,7 +2265,7 @@
   "verified": true,
   "note": "Forecast -2.0%, previous -7.3%",
   "bot": "research",
-  "createdAt": "2026-11-18T04:01:43Z"
+  "createdAt": "2026-11-19T04:03:38Z"
  },
  {
   "id": "2026-11-18-1930-usd-crude-oil-inventories",
@@ -2279,7 +2279,7 @@
   "verified": true,
   "note": "Forecast 0.4M, previous 4.7M",
   "bot": "research",
-  "createdAt": "2026-11-18T04:01:43Z"
+  "createdAt": "2026-11-19T04:03:38Z"
  },
  {
   "id": "2026-11-18-2115-usd-fomc-member-daly-speaks",
@@ -2293,7 +2293,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-18T04:01:43Z"
+  "createdAt": "2026-11-19T04:03:38Z"
  },
  {
   "id": "2026-11-18-2235-usd-fomc-member-barr-speaks",
@@ -2307,7 +2307,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-18T04:01:43Z"
+  "createdAt": "2026-11-19T04:03:38Z"
  },
  {
   "id": "2026-11-18-2300-usd-fomc-meeting-minutes",
@@ -2321,7 +2321,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-18T04:01:43Z"
+  "createdAt": "2026-11-19T04:03:38Z"
  },
  {
   "id": "2026-11-18-2330-usd-fomc-member-williams-speaks",
@@ -2335,7 +2335,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-18T04:01:43Z"
+  "createdAt": "2026-11-19T04:03:38Z"
  },
  {
   "id": "2026-11-19-0100-usd-tic-long-term-purchases",
@@ -2349,7 +2349,7 @@
   "verified": true,
   "note": "Forecast 160.7B, previous 279.2B",
   "bot": "research",
-  "createdAt": "2026-11-18T04:01:43Z"
+  "createdAt": "2026-11-19T04:03:38Z"
  },
  {
   "id": "2026-11-19-0115-usd-fomc-member-kashkari-speaks",
@@ -2363,7 +2363,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-18T04:01:43Z"
+  "createdAt": "2026-11-19T04:03:38Z"
  },
  {
   "id": "2026-11-19-1300-eur-current-account",
@@ -2377,7 +2377,7 @@
   "verified": true,
   "note": "Forecast 16.6B, previous 8.7B",
   "bot": "research",
-  "createdAt": "2026-11-18T04:01:43Z"
+  "createdAt": "2026-11-19T04:03:38Z"
  },
  {
   "id": "2026-11-19-1500-eur-german-buba-monthly-report",
@@ -2391,7 +2391,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-18T04:01:43Z"
+  "createdAt": "2026-11-19T04:03:38Z"
  },
  {
   "id": "2026-11-19-1730-eur-ecb-president-lagarde-speaks",
@@ -2405,7 +2405,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-18T04:01:43Z"
+  "createdAt": "2026-11-19T04:03:38Z"
  },
  {
   "id": "2026-11-19-1730-usd-philly-fed-manufacturing-index",
@@ -2419,7 +2419,7 @@
   "verified": true,
   "note": "Forecast 20.6, previous 20.9",
   "bot": "research",
-  "createdAt": "2026-11-18T04:01:43Z"
+  "createdAt": "2026-11-19T04:03:38Z"
  },
  {
   "id": "2026-11-19-1730-usd-unemployment-claims",
@@ -2433,7 +2433,7 @@
   "verified": true,
   "note": "Forecast 198K, previous 200K",
   "bot": "research",
-  "createdAt": "2026-11-18T04:01:43Z"
+  "createdAt": "2026-11-19T04:03:38Z"
  },
  {
   "id": "2026-11-19-1750-usd-fomc-member-hammack-speaks",
@@ -2447,7 +2447,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-18T04:01:43Z"
+  "createdAt": "2026-11-19T04:03:38Z"
  },
  {
   "id": "2026-11-19-1825-usd-fomc-member-jefferson-speaks",
@@ -2461,7 +2461,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-18T04:01:43Z"
+  "createdAt": "2026-11-19T04:03:38Z"
  },
  {
   "id": "2026-11-19-1900-usd-cb-leading-index-m-m",
@@ -2475,7 +2475,7 @@
   "verified": true,
   "note": "Forecast 0.0%, previous 0.0%",
   "bot": "research",
-  "createdAt": "2026-11-18T04:01:43Z"
+  "createdAt": "2026-11-19T04:03:38Z"
  },
  {
   "id": "2026-11-19-1915-usd-mortgage-delinquencies",
@@ -2489,7 +2489,7 @@
   "verified": true,
   "note": "previous 4.37%",
   "bot": "research",
-  "createdAt": "2026-11-18T04:01:43Z"
+  "createdAt": "2026-11-19T04:03:38Z"
  },
  {
   "id": "2026-11-19-1930-usd-natural-gas-storage",
@@ -2503,7 +2503,7 @@
   "verified": true,
   "note": "Forecast 25B, previous 61B",
   "bot": "research",
-  "createdAt": "2026-11-18T04:01:43Z"
+  "createdAt": "2026-11-19T04:03:38Z"
  },
  {
   "id": "2026-11-19-2130-usd-fomc-member-goolsbee-speaks",
@@ -2517,7 +2517,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-18T04:01:43Z"
+  "createdAt": "2026-11-19T04:03:38Z"
  },
  {
   "id": "2026-11-19-2315-usd-fomc-member-barr-speaks",
@@ -2531,7 +2531,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-18T04:01:43Z"
+  "createdAt": "2026-11-19T04:03:38Z"
  },
  {
   "id": "2026-11-20-0100-usd-fomc-member-barkin-speaks",
@@ -2545,7 +2545,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-18T04:01:43Z"
+  "createdAt": "2026-11-19T04:03:38Z"
  },
  {
   "id": "2026-11-20-0330-usd-fomc-member-paulson-speaks",
@@ -2559,7 +2559,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-18T04:01:43Z"
+  "createdAt": "2026-11-19T04:03:38Z"
  },
  {
   "id": "2026-11-20-1100-eur-german-ppi-m-m",
@@ -2573,7 +2573,7 @@
   "verified": true,
   "note": "Forecast 0.9%, previous 1.9%",
   "bot": "research",
-  "createdAt": "2026-11-18T04:01:43Z"
+  "createdAt": "2026-11-19T04:03:38Z"
  },
  {
   "id": "2026-11-20-1215-eur-ecb-president-lagarde-speaks",
@@ -2587,7 +2587,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-18T04:01:43Z"
+  "createdAt": "2026-11-19T04:03:38Z"
  },
  {
   "id": "2026-11-20-1700-eur-german-buba-president-nagel-speaks",
@@ -2601,7 +2601,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-18T04:01:43Z"
+  "createdAt": "2026-11-19T04:03:38Z"
  },
  {
   "id": "2026-11-20-1725-usd-fomc-member-waller-speaks",
@@ -2615,7 +2615,7 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-18T04:01:43Z"
+  "createdAt": "2026-11-19T04:03:38Z"
  },
  {
   "id": "2026-11-20-1900-eur-consumer-confidence",
@@ -2629,7 +2629,7 @@
   "verified": true,
   "note": "Forecast -18, previous -18",
   "bot": "research",
-  "createdAt": "2026-11-18T04:01:43Z"
+  "createdAt": "2026-11-19T04:03:38Z"
  },
  {
   "id": "2026-11-20-1900-usd-revised-uom-consumer-sentiment",
@@ -2643,7 +2643,7 @@
   "verified": true,
   "note": "Forecast 51.7, previous 51.0",
   "bot": "research",
-  "createdAt": "2026-11-18T04:01:43Z"
+  "createdAt": "2026-11-19T04:03:38Z"
  },
  {
   "id": "2026-11-20-1900-usd-revised-uom-inflation-expectations",
@@ -2657,7 +2657,7 @@
   "verified": true,
   "note": "previous 4.3%",
   "bot": "research",
-  "createdAt": "2026-11-18T04:01:43Z"
+  "createdAt": "2026-11-19T04:03:38Z"
  },
  {
   "id": "2026-11-20-2115-usd-fomc-member-cook-speaks",
@@ -2671,6 +2671,6 @@
   "verified": true,
   "note": "",
   "bot": "research",
-  "createdAt": "2026-11-18T04:01:43Z"
+  "createdAt": "2026-11-19T04:03:38Z"
  }
 ]
