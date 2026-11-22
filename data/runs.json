@@ -1,5 +1,11 @@
 [
  {
+  "bot": "ops",
+  "at": "2026-11-22T08:18:21Z",
+  "status": "ok",
+  "summary": "Records for 2026-W47: 0 gaps"
+ },
+ {
   "bot": "tracker",
   "at": "2026-11-22T07:58:30Z",
   "status": "ok",
