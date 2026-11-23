@@ -1,5 +1,11 @@
 [
  {
+  "bot": "tracker",
+  "at": "2026-11-23T04:58:19Z",
+  "status": "ok",
+  "summary": "Nothing to track"
+ },
+ {
   "bot": "chief",
   "at": "2026-11-23T04:14:01Z",
   "status": "ok",
@@ -484,12 +490,6 @@
   "at": "2026-11-18T20:28:30Z",
   "status": "ok",
   "summary": "No trades logged"
- },
- {
-  "bot": "tracker",
-  "at": "2026-11-18T19:45:38Z",
-  "status": "ok",
-  "summary": "Nothing to track"
  },
  {
   "bot": "chief",
