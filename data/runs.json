@@ -1,6 +1,12 @@
 [
  {
   "bot": "tracker",
+  "at": "2026-11-24T15:52:19Z",
+  "status": "ok",
+  "summary": "Nothing to track"
+ },
+ {
+  "bot": "tracker",
   "at": "2026-11-24T14:10:23Z",
   "status": "ok",
   "summary": "Nothing to track"
@@ -478,12 +484,6 @@
   "at": "2026-11-20T03:59:28Z",
   "status": "ok",
   "summary": "62 events in feed (4 high impact); partial: ff_calendar_nextweek.json: HTTPError"
- },
- {
-  "bot": "tracker",
-  "at": "2026-11-20T03:39:51Z",
-  "status": "ok",
-  "summary": "Nothing to track"
  },
  {
   "bot": "journal",
