@@ -1,5 +1,11 @@
 [
  {
+  "bot": "journal",
+  "at": "2026-11-25T20:26:21Z",
+  "status": "ok",
+  "summary": "No trades logged"
+ },
+ {
   "bot": "tracker",
   "at": "2026-11-25T19:42:05Z",
   "status": "ok",
