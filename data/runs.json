@@ -1,5 +1,17 @@
 [
  {
+  "bot": "chief",
+  "at": "2026-11-25T04:14:43Z",
+  "status": "ok",
+  "summary": "2 high-impact events: USD Core PCE Price Index m/m at 17:30, USD Prelim GDP q/q at 17:30"
+ },
+ {
+  "bot": "research",
+  "at": "2026-11-25T04:14:43Z",
+  "status": "ok",
+  "summary": "47 events in feed (2 high impact); partial: ff_calendar_nextweek.json: HTTPError"
+ },
+ {
   "bot": "tracker",
   "at": "2026-11-25T03:48:26Z",
   "status": "ok",
